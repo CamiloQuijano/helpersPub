@@ -409,6 +409,29 @@ Documentación: https://www.php.net/manual/es/function.round.php
 	echo round(-1.54, 1, PHP_ROUND_HALF_ODD);  // -1.5
 ```
 
+## Redondear valor superior
+###### Tags: `php` `round` `ceil` `mayor`
+
+```php
+	ceil(0.60);      // 1
+	ceil(0.40);      // 1
+	ceil(5);         // 5
+	ceil(5.1);       // 6
+	ceil(-5.1);      // -5
+	ceil(-5.9);      // -5
+```
+
+## Formato a numeros 
+###### Tags: `php` `number_format`
+
+```php
+	number_format("1000000");              // 1,000,000
+	number_format("1000000",2);            // 1,000,000.00
+	number_format("1000000",2,",",".");    // 1.000.000,00
+	number_format(1999.9)                  // 2,000
+	number_format(1999.9, 2)               // 1,999.90
+```
+
 
 ## switch case break
 
@@ -512,7 +535,13 @@ Documentación: https://www.php.net/manual/es/function.round.php
 	// Fecha actual menos N minutos 
 	$fecha = strtotime('-7 day', strtotime(date('Y-m-d')));// 7 dias atras        
 	date('Y-m-d', $fecha); 
+	
+	// Modificar dias y valodarlo contra otra (db)
+	$dateDocument = $docHead['fecha'];
+	$deadlineDate  = date('Y-m-d', strtotime('-45 days'));
+    if($dateDocument < $deadlineDate) { throw new Exception('Actualizar Vendedor: Fecha del documento no puede ser mayor a 45 días'); }
 ```
+
 
 ### Crear fecha a partir de formato 
 ###### Tags: `php` `datetime` `createFromFormat`

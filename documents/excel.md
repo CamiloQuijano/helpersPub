@@ -34,3 +34,24 @@
 	=CONCATENAR('TEXTO1'; ' | '; 'TEXTO2')    	// TEXTO1 | TEXTO 2
 	=CONCATENAR('A'; 'B'; 'C')                	// TEXTO1 | TEXTO 2
 ```
+
+
+## Recortar palabras
+###### Tags: `excel` `EXTRAE` `substring`
+
+```js
+	TEXTO = 'Audifonos Gw 3 Monster'
+	=EXTRAE(TEXTO;POSICION_INICIAL;POSICION_FINAL)      // Parametros
+	=EXTRAE('Audifonos Gw';1;5)                         // Salida: Audif
+	=EXTRAE('Audifonos Gw';1;9)                         // Salida: Audifonos
+	=EXTRAE('CALLE 12 NO. 5-20 OF. 111';1;10)           // Salida: CALLE 12 N
+```
+
+
+## Longitud palabras
+###### Tags: `excel` `largo` `length` `tamaño`
+
+```js
+	=LARGO('Accesorios')    // Salida: 10
+	=LARGO('Igoma')         // Salida: 5
+```

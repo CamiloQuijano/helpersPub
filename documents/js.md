@@ -21,7 +21,7 @@
 ```
 
 ### redireccionar - recargar - validar url si finaliza en un texto especifico
-###### Tags: `js` `reload` `location` `href` `endsWith`
+###### Tags: `js` `reload` `location` `href` `endsWith` `history` `back`
 
 ```js
     // Refrescar
@@ -29,6 +29,9 @@
 
     // Redireccionar
     window.location.href = 'http://www.example.com'
+	
+	// Volver atras (navegacion)
+	window.history.back();
 
     // Validar si la ruta actual finaliza el un contenido específico
     window.location.href.endsWith('aseguramiento/inconsistencias')
@@ -163,6 +166,14 @@ Al trabajar con fechas en javascript y pasar un string es necesario que el forma
     parseInt("10.50");      // 10
     parseInt("casi 10");    // NaN
     parseInt("10",16);      // 16
+```
+
+### Setear variable a formato texto - string
+###### Tags: `js` `string` `format` 
+
+```js
+	const stringObj = new String('foo');           // Salida: String { "foo" }
+	stringObj.toString());                         // Salida: "foo"
 ```
 
 ### Validar si una variables es un numero isNan
@@ -512,8 +523,18 @@ Es similar al while, pero se ejecuta la primera condición asi no cumpla el whil
 
  
 ## Reiniciar Select2 change
+###### Tags: `js` `trigger` `change` `setTimeout` `resetear`
+
 ```js
-    $("#scheduleStatusEdit").val('').trigger('change'); 
+    $("#nameImnput").val('').trigger('change'); 
+	
+	Resetear formulario con select2 autocompletar incluidos
+
+	$('#formName').trigger('reset');
+	setTimeout(() => {
+		$("#nameImnput").trigger('change'); 
+		$('#nameImnput').val('').trigger('change');
+	}, 200);
 ```
 
 

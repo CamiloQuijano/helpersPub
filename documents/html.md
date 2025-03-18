@@ -104,3 +104,41 @@ Agrupa cabezote verticalmente (2 lineas)
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 ```
+
+
+## Radio button
+###### Tags: `html` `radio` `input`
+
+```html
+	<p>Please select your favorite Web language:</p>
+  	<input type="radio" id="html" name="fav_language" value="HTML">
+  	<label for="html">HTML</label><br>
+  	<input type="radio" id="css" name="fav_language" value="CSS">
+  	<label for="css">CSS</label><br>
+  	<input type="radio" id="javascript" name="fav_language" value="JavaScript">
+  	<label for="javascript">JavaScript</label>
+	<br>  
+
+	<p>Please select your age:</p>
+	<input type="radio" id="age1" name="age" value="30">
+	<label for="age1">0 - 30</label><br>
+	<input type="radio" id="age2" name="age" value="60">
+	<label for="age2">31 - 60</label><br>  
+	<input type="radio" id="age3" name="age" value="100">
+	<label for="age3">61 - 100</label><br><br>
+	<input type="submit" value="Submit">
+```
+
+## Number button
+###### Tags: `html` `number` `input` `min` `max`
+
+Min y max validan el formulario previo al envio pero no evitan poner valores diferente
+
+```html
+	<form action="/action_page.php">
+	  <label for="quantity">Quantity (between 1 and 5):</label>
+	  <input type="number" id="quantity" name="quantity" min="1" max="5">
+	  <input type="submit">
+	</form>
+```
+

@@ -294,7 +294,15 @@ helpers = [
             {
                 "title": "Alter table Column add-drop",
                 "url": "documents\/SQL.html#alter-table-column-add-drop",
-                "subnivels": []
+                "subnivels": [],
+                "tags": [
+                    "SQL",
+                    "table",
+                    "alter",
+                    "add",
+                    "money",
+                    "small"
+                ]
             },
             {
                 "title": "Agregar llave foranea a columna",
@@ -454,6 +462,16 @@ helpers = [
                 "title": "Consultas de administracion",
                 "url": "documents\/SQL.html#consultas-de-administracion",
                 "subnivels": [
+                    {
+                        "title": "Consulta tamano de db",
+                        "url": "documents\/SQL.html#consulta-tamano-de-db",
+                        "subnivels": [],
+                        "tags": [
+                            "exec",
+                            "sp_spaceused",
+                            "size"
+                        ]
+                    },
                     {
                         "title": "Consulta tamano de db y tablas",
                         "url": "documents\/SQL.html#consulta-tamano-de-db-y-tablas",
@@ -1253,6 +1271,27 @@ helpers = [
                     "excel",
                     "CONCATENAR"
                 ]
+            },
+            {
+                "title": "Recortar palabras",
+                "url": "documents\/excel.html#recortar-palabras",
+                "subnivels": [],
+                "tags": [
+                    "excel",
+                    "EXTRAE",
+                    "substring"
+                ]
+            },
+            {
+                "title": "Longitud palabras",
+                "url": "documents\/excel.html#longitud-palabras",
+                "subnivels": [],
+                "tags": [
+                    "excel",
+                    "largo",
+                    "length",
+                    "tama\u00f1o"
+                ]
             }
         ]
     },
@@ -1626,6 +1665,28 @@ helpers = [
                     "meta",
                     "tags"
                 ]
+            },
+            {
+                "title": "Radio button",
+                "url": "documents\/html.html#radio-button",
+                "subnivels": [],
+                "tags": [
+                    "html",
+                    "radio",
+                    "input"
+                ]
+            },
+            {
+                "title": "Number button",
+                "url": "documents\/html.html#number-button",
+                "subnivels": [],
+                "tags": [
+                    "html",
+                    "number",
+                    "input",
+                    "min",
+                    "max"
+                ]
             }
         ]
     },
@@ -1816,6 +1877,18 @@ helpers = [
                 ]
             },
             {
+                "title": "Buscar en DOM por nombre - niveles superiores",
+                "url": "documents\/jquery.html#buscar-en-dom-por-nombre---niveles-superiores",
+                "subnivels": [],
+                "tags": [
+                    "jquery",
+                    "find",
+                    "parent",
+                    "removeClass",
+                    "addClass"
+                ]
+            },
+            {
                 "title": "Agregar contenido en un Id o Clase - antes o despues",
                 "url": "documents\/jquery.html#agregar-contenido-en-un-id-o-clase---antes-o-despues",
                 "subnivels": [],
@@ -1940,7 +2013,9 @@ helpers = [
                             "reload",
                             "location",
                             "href",
-                            "endsWith"
+                            "endsWith",
+                            "history",
+                            "back"
                         ]
                     },
                     {
@@ -2071,6 +2146,16 @@ helpers = [
                             "parseInt",
                             "format",
                             "numero"
+                        ]
+                    },
+                    {
+                        "title": "Setear variable a formato texto - string",
+                        "url": "documents\/js.html#setear-variable-a-formato-texto---string",
+                        "subnivels": [],
+                        "tags": [
+                            "js",
+                            "string",
+                            "format"
                         ]
                     },
                     {
@@ -2225,7 +2310,14 @@ helpers = [
             {
                 "title": "Reiniciar Select2 change",
                 "url": "documents\/js.html#reiniciar-select2-change",
-                "subnivels": []
+                "subnivels": [],
+                "tags": [
+                    "js",
+                    "trigger",
+                    "change",
+                    "setTimeout",
+                    "resetear"
+                ]
             },
             {
                 "title": "request http ajax simple",
@@ -2468,7 +2560,12 @@ helpers = [
             {
                 "title": "Generar key SSH",
                 "url": "documents\/linux.html#generar-key-ssh",
-                "subnivels": []
+                "subnivels": [],
+                "tags": [
+                    "keygen",
+                    "pem",
+                    "ssh"
+                ]
             },
             {
                 "title": "Comandos PHP",
@@ -2509,6 +2606,15 @@ helpers = [
                 "title": "Instalar sublime3",
                 "url": "documents\/linux.html#instalar-sublime3",
                 "subnivels": []
+            },
+            {
+                "title": "Crontab",
+                "url": "documents\/linux.html#crontab",
+                "subnivels": [],
+                "tags": [
+                    "procesos",
+                    "programar"
+                ]
             },
             {
                 "title": "Configurar php.ini",
@@ -3145,6 +3251,26 @@ helpers = [
                     "PHP_ROUND_HALF_DOWN",
                     "PHP_ROUND_HALF_EVEN",
                     "PHP_ROUND_HALF_ODD"
+                ]
+            },
+            {
+                "title": "Redondear valor superior",
+                "url": "documents\/php.html#redondear-valor-superior",
+                "subnivels": [],
+                "tags": [
+                    "php",
+                    "round",
+                    "ceil",
+                    "mayor"
+                ]
+            },
+            {
+                "title": "Formato a numeros",
+                "url": "documents\/php.html#formato-a-numeros",
+                "subnivels": [],
+                "tags": [
+                    "php",
+                    "number_format"
                 ]
             },
             {
@@ -4629,6 +4755,16 @@ helpers = [
                     "underscore",
                     "js",
                     "findLastIndex"
+                ]
+            },
+            {
+                "title": "Consultar en objeto por atributos",
+                "url": "documents\/underscore.html#consultar-en-objeto-por-atributos",
+                "subnivels": [],
+                "tags": [
+                    "underscore",
+                    "js",
+                    "findWhere"
                 ]
             }
         ]

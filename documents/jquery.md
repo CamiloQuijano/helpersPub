@@ -72,6 +72,17 @@
     var name2 = $('#referrerRequestForm').find('input[name=contactName]').val();
 ```
 
+## Buscar en DOM por nombre - niveles superiores
+###### Tags: `jquery` `find` `parent` `removeClass` `addClass`
+
+```js	
+    $('body').on('click', '.paleta-colores li', function() {
+        $(this).parent().find('li').removeClass('active');
+        $(this).addClass('active');
+    });
+```
+
+
 ## Agregar contenido en un Id o Clase - antes o despues
 ###### Tags: `jquery` `append` `prepend`
 ```js

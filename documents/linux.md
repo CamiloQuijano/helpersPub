@@ -82,9 +82,15 @@ Estructura generales
 ```
 
 ## Generar key SSH
+###### Tags: `keygen` `pem` `ssh`  
+
+Comandos
 ```bash
 	cd ~/.ssh       Directorio de keys de ubuntu
 	ssh-keygen      Generar key nueva
+	
+	# Crear comando de conexión a server
+	ssh -t -i "/ruta/.pem" ubuntu@52.40.120.120 -p 22
 ```
 
 ## Comandos PHP  
@@ -172,6 +178,56 @@ Estructura generales
 	sudo apt-get update
 	sudo apt-get install sublime-text-installer
 ```  
+
+
+## Crontab
+###### Tags: `procesos` `programar`
+
+crontab online para buscar como programar un proceso de acuerdo a la necesidad
+https://crontab.cronhub.io/
+
+Estructura de parametrización
+```bash
+	* 	segundos (Opcional)
+	*	minutos (0-59)
+	* 	hour (0 - 23)
+	* 	day of the month (1 - 31)
+	*	month (1 - 12)	
+	* 	day of the week (0 - 6)
+```
+
+Ejemplos estructura
+```bash
+	* * * * *             # Cada minuto
+	0 * * * *             # Cada hora
+	0 0 * * *             # Todos los días a las 12:00 AM
+	0 0 * * FRI           # A las 12:00 AM, solo los viernes
+	0 0 1 * *             # A las 12:00 AM del día 1 del mes
+	0 14-0/2 * * *        # Cada 2 Horas entre las 14:00 y las 00:59 (12:59 AM)
+	*/5 12-23 * * *       # Cada 5 minutos entre las 12:00 y las 23:59 (11:59 PM)
+	13-59/5 11-23 * * *   # Cada 5 minutos entre el minuto 13 a 59 entre las 11AM y las 11:59PM
+	15 8-19/6 * * *       # A los 15 minutos cada 6 horas entre las 8:00 y las 19:59 (7:59 AM)
+	*/45 * * * * *        # Cada 45 segundos
+	*/1.5 * * * *         # Cada minuto y medio
+```
+
+Comandos relevantes para programar procesos 
+```bash
+	sudo su 		# pasar como administrador
+	crontab -l		# Listado de procesos programados
+	crontab -e		# Actualizar procesos programados
+```
+
+Ejemplo de programar proceso con LOG de comentarios 
+
+```bash
+	# Ejemplo proceso GET
+	0 10 * * * curl -k https://proceso/CTi5csa5​​​ >> /var/www/logs_jobs/URL39.log
+
+	# Ejemplo proceso POST (Necesario poner request) - comentarios con #
+	*/10 12-23  * * * curl -k --request POST https://proceso/eDnx5SN9bYsa5 >> /var/www/logs_jobs/URL51.log
+	#*/10 12-23  * * * curl -k --request POST https://proceso/9CTi5cDWLvbYsa5 >> /var/www/logs_jobs/URL51.log
+```
 
 
 ## Configurar php.ini 

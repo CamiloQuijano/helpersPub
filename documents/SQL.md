@@ -363,6 +363,7 @@ Ejemplos implementados
 
 
 ## Alter table Column add-drop
+###### Tags: `SQL` `table` `alter` `add` `money` `small`
 
 [SQL AlterTable](https://www.1keydata.com/es/sql/sql-alter-table.php)
 
@@ -372,16 +373,18 @@ Ejemplos implementados
 	ADD usuModifica VARCHAR(15) null default(NULL); 
 	
 	-- Agregar multiples columnas 
-	ALTER TABLE "inv_NoSeriales" 
+	ALTER TABLE "inv_disponible" 
 	ADD 
-		garantiaUnidad MONEY null default(0),
-		garantiaPesos MONEY null default(0); 
+		unidad MONEY null default(0),
+		pesos MONEY null default(0),
+		codigo SMALLINT 
 	
 	-- Modificar columna
 	ALTER TABLE inv_listaPreciosCabeza ALTER COLUMN ip VARCHAR(20);
 	
 	-- Eliminar columna
 	ALTER TABLE portal_mantenimientoPcHvCab DROP COLUMN usu_modifica ;
+
 ```
 
 ## Agregar llave foranea a columna
@@ -424,6 +427,7 @@ Ejemplos implementados
 	CREATE TABLE crm_clienteContactos ( 
 	  id BIGINT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 	  clienteId BIGINT NOT NULL,
+	  codigo SMALLINT NOT NULL,
 	  nombre VARCHAR(50) NOT NULL, 
 	  apellido VARCHAR(50) NOT NULL, 
 	  cargo VARCHAR(50) NOT NULL, 
@@ -476,6 +480,13 @@ Generar Backup de una tabla
 6. Haga clic en Siguiente y luego especifique el nombre del archivo de salida.
 7. Esto generará solo los esquemas. Si también desea generar scripts de datos, haga clic en el botón Avanzado y desplácese hacia abajo hasta "Tipos de datos para script" y cámbielo de "Solo esquema" a "Solo datos" o "Esquema y datos".
 8. Haga clic en Finalizar para generar el script. 
+
+ENGLISH
+1. Seleccione la db
+2. Click derecho -> Tasks -> Generate Scripts..
+3. En tab Choose Objects -> seleccionar las tablas o vistas requeridas
+4. En tab Set Scripting Options -> Boton 'Advanced' y check 'Save to new query window'
+5. En opción Types of data to scripts -> Data Only
 
 
 ## Proceso SQL 
@@ -607,6 +618,14 @@ CREATE TABLE #CORREOS_VALIDAR (
 ```
 
 ## Consultas de administracion
+
+### Consulta tamano de db
+###### Tags: `exec` `sp_spaceused` `size` 
+
+```sql
+	use database_name
+	exec sp_spaceused
+```
 
 ### Consulta tamano de db y tablas
 ###### Tags: `tables` `size` 

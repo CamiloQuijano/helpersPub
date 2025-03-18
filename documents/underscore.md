@@ -105,6 +105,18 @@ devolviendo el índice más cercano al final donde pasa la prueba de verdad del 
 ```
 
 
+## Consultar en objeto por atributos
+###### Tags: `underscore` `js` `findWhere`
+
+```js
+	_.findWhere(publicServicePulitzers, {newsroom: "The New York Times"});
+	=> {year: 1918, newsroom: "The New York Times",
+	  reason: "For its public service in publishing in full so many official reports,
+	  documents and speeches by European statesmen relating to the progress and
+	  conduct of the war."}
+```
+
+
 # Underscore.string
 
 - [Documentación](https://gabceb.github.io/underscore.string.site/)  
