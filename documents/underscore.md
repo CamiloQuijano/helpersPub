@@ -17,20 +17,30 @@ Implementación:
 ```
 
 ## Ordenar Objeto 
-###### Tags: `underscore` `js` `sortBy`
+###### Tags: `underscore` `js` `sortBy` `order`
 ```js
+	// Ordenamiento Númerico
     _.sortBy([1, 2, 3, 4, 5, 6], function(num){ return Math.sin(num); });
 	=> [5, 4, 6, 3, 1, 2]
 
-	-- Orden Ascendente
+	// Orden Ascendente
 	var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
 	_.sortBy(stooges, 'name');
 	=> [{name: 'curly', age: 60}, {name: 'larry', age: 50}, {name: 'moe', age: 40}];
 
-	-- Orden Descendente
+	// Orden Descendente
 	var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
 	_.sortBy(stooges, 'name', 'desc').reverse();
 	=> [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
+	
+	// Ordenar Ascedente (con función)
+	_.sortBy($scope.items, function (o) { return -o.price.now; })
+	
+	// Ordenar Descendente (con función)
+	_.sortBy($scope.items, function (o) { return o.price.now; })
+	
+	// Orden por multiples valores - anidado (Primero en orden inicial - ejemplo, primero categoria, despues precio)
+	$scope.items = _.sortBy(( _.sortBy($scope.items, function (o) { return o.ordenCategory; })), function (o) { -o.price.now; });
 ```
 
 ## Array column en JS 

@@ -529,6 +529,40 @@ Capturar información de Formulario HTML para envío por angular
 ```
 
 
+## Directive - renderizar al finalizar iteracion
+###### Tags: `angular` `directive` `onFinishRenderElement` 
+
+```js
+	angular
+        .module('reloadApp', [])
+        .directive('onFinishRenderElement', ["$timeout", function ($timeout) {
+            return {
+                restrict: 'A',
+                replace: true,
+                link: function (scope, element, attr) {
+                    $timeout(function () { // $timeout|$interval 
+                        scope.$eval(attr.onFinishRenderElement); // $eval|$evalAsync 
+                    });
+                }
+            };
+        }]);
+        .controller('ReportController', ['$scope', ($scope) => { 	
+		
+			// Función de Finalización de Iteración
+			$scope.endRenderItem = function (item) {
+				...
+			}
+			
+			...
+		}]);
+```
+	
+```html	
+	<div ng-repeat="(k, item) in items" on-finish-render-element="endRenderItem(item)">
+		...
+	</div>
+```
+
 ## Implementaciones
 
 Altactic: Notificaciones

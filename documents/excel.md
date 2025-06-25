@@ -27,6 +27,29 @@
 	=HOY()                          	// Fecha actual     	Salida: 2/01/2022
 ```
 
+
+## Sumarle meses a una fecha
+###### Tags: `excel` `FECHA.MES`
+
+```js
+	FECHA = '15/05/2025';
+	=FECHA.MES(FECHA;3)				    // 15/08/2025
+	=FECHA.MES(FECHA;12)			    // 15/05/2026
+```
+
+
+## Buscar caracter en especifico
+###### Tags: `excel` `ENCONTRAR`
+
+```js
+	=ENCONTRAR(VALOR_A_BUSCAR;CELDA_A_VALIDAR;INICIAR_DESDE_POSICION) 
+
+	B366 = 'HOLA MUNDO DOS'
+	=ENCONTRAR(" ";B366)	       // SALIDA 5
+	=ENCONTRAR(" ";B366;6)	       // SALIDA 11
+```
+
+
 ## Concatenar textos
 ###### Tags: `excel` `CONCATENAR`
 
@@ -47,6 +70,14 @@
 	=EXTRAE('CALLE 12 NO. 5-20 OF. 111';1;10)           // Salida: CALLE 12 N
 ```
 
+## Contar condicional
+###### Tags: `excel` `CONTAR.SI`
+
+```js
+	=CONTAR.SI(F1:F100;">0")
+	// Salida: Cuenta solo las celdas que su valor sea mayor a 0
+```
+
 
 ## Longitud palabras
 ###### Tags: `excel` `largo` `length` `tamaño`
@@ -54,4 +85,14 @@
 ```js
 	=LARGO('Accesorios')    // Salida: 10
 	=LARGO('Igoma')         // Salida: 5
+```
+
+
+## Contar Espacios en celda
+###### Tags: `excel` `LARGO` `SUSTITUIR`
+
+```js
+	=LARGO(A1)-LARGO(SUSTITUIR(A1;" ";"")) 
+	A1 = 'Juan David'                // Salida: 1
+	A1 = 'Juan David Perez'          // Salida: 2
 ```

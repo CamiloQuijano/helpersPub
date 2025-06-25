@@ -153,6 +153,19 @@ $(".showDetailContent").toggle();
 ```
 
 
+### Agrupar objetos - unir
+###### Tags: `jquery` `extend` `join` 
+
+```js	
+	var a = {foo: "a", bar: "a"};
+	var b = {foo: null, bar: undefined};
+	jQuery.extend(a,b); // $.extend(a,b);
+	
+	console.log("A: Foo=" + a.foo + " Bar=" + a.bar);
+	A: Foo=null Bar=a
+``` 
+
+
 ### Imprimir 
 ###### Tags: `jquery` `print` `media` `val`
 
