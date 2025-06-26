@@ -175,6 +175,17 @@ helpers = [
                 ]
             },
             {
+                "title": "Castear numeros con decimal",
+                "url": "documents\/SQL.html#castear-numeros-con-decimal",
+                "subnivels": [],
+                "tags": [
+                    "SQL",
+                    "getdate",
+                    "CAST",
+                    "DECIMAL"
+                ]
+            },
+            {
                 "title": "Incremetar o restar dias a una fecha",
                 "url": "documents\/SQL.html#incremetar-o-restar-dias-a-una-fecha",
                 "subnivels": [],
@@ -832,6 +843,16 @@ helpers = [
                 ]
             },
             {
+                "title": "Directive - renderizar al finalizar iteracion",
+                "url": "documents\/angular.html#directive---renderizar-al-finalizar-iteracion",
+                "subnivels": [],
+                "tags": [
+                    "angular",
+                    "directive",
+                    "onFinishRenderElement"
+                ]
+            },
+            {
                 "title": "Implementaciones",
                 "url": "documents\/angular.html#implementaciones",
                 "subnivels": []
@@ -1264,6 +1285,24 @@ helpers = [
                 ]
             },
             {
+                "title": "Sumarle meses a una fecha",
+                "url": "documents\/excel.html#sumarle-meses-a-una-fecha",
+                "subnivels": [],
+                "tags": [
+                    "excel",
+                    "FECHA.MES"
+                ]
+            },
+            {
+                "title": "Buscar caracter en especifico",
+                "url": "documents\/excel.html#buscar-caracter-en-especifico",
+                "subnivels": [],
+                "tags": [
+                    "excel",
+                    "ENCONTRAR"
+                ]
+            },
+            {
                 "title": "Concatenar textos",
                 "url": "documents\/excel.html#concatenar-textos",
                 "subnivels": [],
@@ -1283,6 +1322,15 @@ helpers = [
                 ]
             },
             {
+                "title": "Contar condicional",
+                "url": "documents\/excel.html#contar-condicional",
+                "subnivels": [],
+                "tags": [
+                    "excel",
+                    "CONTAR.SI"
+                ]
+            },
+            {
                 "title": "Longitud palabras",
                 "url": "documents\/excel.html#longitud-palabras",
                 "subnivels": [],
@@ -1291,6 +1339,16 @@ helpers = [
                     "largo",
                     "length",
                     "tama\u00f1o"
+                ]
+            },
+            {
+                "title": "Contar Espacios en celda",
+                "url": "documents\/excel.html#contar-espacios-en-celda",
+                "subnivels": [],
+                "tags": [
+                    "excel",
+                    "LARGO",
+                    "SUSTITUIR"
                 ]
             }
         ]
@@ -1359,6 +1417,15 @@ helpers = [
                 "title": "Logs de errores",
                 "url": "documents\/generics.html#logs-de-errores",
                 "subnivels": []
+            },
+            {
+                "title": "Error en envio de correos electronicos a traves de google",
+                "url": "documents\/generics.html#error-en-envio-de-correos-electronicos-a-traves-de-google",
+                "subnivels": [],
+                "tags": [
+                    "google",
+                    "sendmail"
+                ]
             }
         ]
     },
@@ -1969,6 +2036,16 @@ helpers = [
                         ]
                     },
                     {
+                        "title": "Agrupar objetos - unir",
+                        "url": "documents\/jquery.html#agrupar-objetos---unir",
+                        "subnivels": [],
+                        "tags": [
+                            "jquery",
+                            "extend",
+                            "join"
+                        ]
+                    },
+                    {
                         "title": "Imprimir",
                         "url": "documents\/jquery.html#imprimir",
                         "subnivels": [],
@@ -1994,6 +2071,26 @@ helpers = [
                 "title": "FUNCIONES GENERALES",
                 "url": "documents\/js.html#funciones-generales",
                 "subnivels": [
+                    {
+                        "title": "Numero aleatorio",
+                        "url": "documents\/js.html#numero-aleatorio",
+                        "subnivels": [],
+                        "tags": [
+                            "js",
+                            "Math",
+                            "random"
+                        ]
+                    },
+                    {
+                        "title": "Redondear numeros",
+                        "url": "documents\/js.html#redondear-numeros",
+                        "subnivels": [],
+                        "tags": [
+                            "js",
+                            "Math",
+                            "round"
+                        ]
+                    },
                     {
                         "title": "Try catch en JS",
                         "url": "documents\/js.html#try-catch-en-js",
@@ -2990,6 +3087,18 @@ helpers = [
             {
                 "title": "Funciones generales",
                 "url": "documents\/php.html#funciones-generales",
+                "subnivels": [],
+                "tags": [
+                    "php",
+                    "set_time_limit",
+                    "error_reporting",
+                    "date_default_timezone_set",
+                    "sleep"
+                ]
+            },
+            {
+                "title": "Ruta absoluta del proyecto",
+                "url": "documents\/php.html#ruta-absoluta-del-proyecto",
                 "subnivels": [
                     {
                         "title": "general llave unica",
@@ -3012,10 +3121,7 @@ helpers = [
                 ],
                 "tags": [
                     "php",
-                    "set_time_limit",
-                    "error_reporting",
-                    "date_default_timezone_set",
-                    "sleep"
+                    "getcwd"
                 ]
             },
             {
@@ -3109,6 +3215,15 @@ helpers = [
                             "php",
                             "array",
                             "in_array"
+                        ]
+                    },
+                    {
+                        "title": "Validar si una variable es arreglo",
+                        "url": "documents\/php.html#validar-si-una-variable-es-arreglo",
+                        "subnivels": [],
+                        "tags": [
+                            "php",
+                            "is_array"
                         ]
                     },
                     {
@@ -3496,6 +3611,28 @@ helpers = [
                 "title": "Funciones - consulta par - impar",
                 "url": "documents\/php.html#funciones---consulta-par---impar",
                 "subnivels": []
+            },
+            {
+                "title": "MPDF - Instalar por composer",
+                "url": "documents\/php.html#mpdf---instalar-por-composer",
+                "subnivels": [],
+                "tags": [
+                    "php",
+                    "composer",
+                    "mdpf",
+                    "pdf"
+                ]
+            },
+            {
+                "title": "Generar un pdf a partir de base64",
+                "url": "documents\/php.html#generar-un-pdf-a-partir-de-base64",
+                "subnivels": [],
+                "tags": [
+                    "php",
+                    "composer",
+                    "mdpf",
+                    "pdf"
+                ]
             }
         ]
     },
@@ -3616,6 +3753,16 @@ helpers = [
                         "title": "Ejemplo query sencilla order_by - join",
                         "url": "documents\/phpCodeigniter.html#ejemplo-query-sencilla-order_by---join",
                         "subnivels": []
+                    },
+                    {
+                        "title": "Ejemplo query con subconsultas",
+                        "url": "documents\/phpCodeigniter.html#ejemplo-query-con-subconsultas",
+                        "subnivels": [],
+                        "tags": [
+                            "php",
+                            "query",
+                            "join"
+                        ]
                     }
                 ]
             },
@@ -3639,6 +3786,19 @@ helpers = [
                     "controller",
                     "documentacion",
                     "json"
+                ]
+            },
+            {
+                "title": "Ejemplo Controlador con control try-catch y retorno json y cache",
+                "url": "documents\/phpCodeigniter.html#ejemplo-controlador-con-control-try-catch-y-retorno-json-y-cache",
+                "subnivels": [],
+                "tags": [
+                    "try",
+                    "catch",
+                    "controller",
+                    "set_output",
+                    "output",
+                    "cache"
                 ]
             },
             {
@@ -4684,7 +4844,8 @@ helpers = [
                 "tags": [
                     "underscore",
                     "js",
-                    "sortBy"
+                    "sortBy",
+                    "order"
                 ]
             },
             {
@@ -4765,6 +4926,25 @@ helpers = [
                     "underscore",
                     "js",
                     "findWhere"
+                ]
+            },
+            {
+                "title": "Filtrar un  objeto",
+                "url": "documents\/underscore.html#filtrar-un--objeto",
+                "subnivels": [],
+                "tags": [
+                    "underscore",
+                    "js",
+                    "filter"
+                ]
+            },
+            {
+                "title": "Extraer keys de objeto",
+                "url": "documents\/underscore.html#extraer-keys-de-objeto",
+                "subnivels": [],
+                "tags": [
+                    "underscore",
+                    "keys"
                 ]
             }
         ]
