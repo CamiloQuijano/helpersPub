@@ -73,3 +73,22 @@ Los archivos se pueden visualizar con sudo less|vim|gedit file_name
 	SYMFONY:		   [carpeta raiz]/app/logs/prod.log
 	CODEIGNITER		[carpeta raiz]/application/logs/*
 	NODE:			  Forever list, hay aparece ruta de archivo log
+	
+	
+## Error en envio de correos electronicos a traves de google
+###### Tags: `google` `sendmail`
+
+
+SOLUCIÓN:  
+https://stackoverflow.com/questions/3477766/phpmailer-smtp-error-could-not-connect-to-smtp-host
+
+Google dejó de permitir que las aplicaciones inicien sesión en Gmail con contraseña real Necesita crear una contraseña para una aplicación específica
+
+1. Paso uno: habilitar 2FA (Doble autenticación)  
+https://myaccount.google.com/signinoptions/two-step-verification/enroll-welcome
+
+2. Paso dos: crea una contraseña específica para la aplicación  
+https://myaccount.google.com/apppasswords
+
+3. Registrar la app y google asignara una contraseña por defecto de 16 caracteres
+Después de esto, usa esos 16 dígitos.

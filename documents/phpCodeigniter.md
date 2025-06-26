@@ -267,6 +267,49 @@ https://codeigniter.com/userguide3/database/query_builder.html
 	return $query->result_array();
 ```
 
+
+### Ejemplo query con subconsultas
+###### Tags: `php` `query` `join`
+
+```php
+	public function getLogSerialDetailsForExcelDb($serialNumbers) {
+
+        // subconsulta para obtener los datos del primer movimiento
+        $subQueryPri = $this->db
+			->select('cue.serie, min(cab.id) primerdocumento')
+			->join("$this->_tableInvDocBody cue", 'cue.idcabeza = cab.id')
+			->group_by('cue.serie')
+			->get_compiled_select("$this->_tableInvDocHead cab");
+        
+        //subconsulta para obtener los datos del ultimo movimiento
+        $subQueryUlt = $this->db
+			->select('cue2.serie, max(cab2.id) ultimodocumento')
+			->join("$this->_tableInvDocBody cue2", 'cue2.idcabeza = cab2.id')
+			->group_by('cue2.serie')
+			->get_compiled_select("$this->_tableInvDocHead cab2");
+        
+        $query = $this->db
+			->select('ser.codSerie, est.descripcion estado, cabPri.fecha fechaPri, 
+				cabPri.numDoc numDocPri, cabPri.tipDoc tipDocPri, cabUlt.fecha fechaUlt, 
+				cabUlt.numDoc numDocUlt, cabUlt.tipDoc tipDocUlt, DATEDIFF(day,cabPri.fecha, 
+				(CASE WHEN est.id = 3 THEN cabUlt.fecha ELSE GETDATE() END)) diferenciaDias')
+			->join("$this->_tInvItem itm", 'ser.item = itm.codigoItem', 'LEFT')
+			->join("($subQueryPri) primerdoc", 'primerdoc.serie = ser.codSerie', 'LEFT')
+			->join("($subQueryUlt) segdoc", 'segdoc.serie = ser.codSerie', 'LEFT')
+			->join("$this->_tableInvDocHead cabPri", 'cabPri.id = primerdoc.primerdocumento', 'LEFT')
+			->join("$this->_tableInvDocHead cabUlt", 'cabUlt.id = segdoc.ultimodocumento', 'LEFT')
+			->join("$this->_tableInvSerialStatus est", 'est.id = ser.estado', 'LEFT')
+			->where_in('codSerie', $serialNumbers)
+			->order_by('codSerie')
+			->get("$this->_tableInvSerials ser");
+        
+        $error = $this->db->error();
+        if ($error['message']) {throw new Exception($error['message'] . ' class:' . __CLASS__ . ' line:' . __LINE__);}
+        return $query->result_array();
+    }    
+```
+
+
 ## Descargar archivo - force_download 
 ```php
 	//Descargar archivo con contenido dinámico
@@ -350,6 +393,26 @@ Logica descarga archivo de aws - s3:
             echo json_encode(array('status' => $code, 'message' => $messageException));
         }
 	}
+```
+
+
+## Ejemplo Controlador con control try-catch y retorno json y cache
+###### Tags: `try` `catch` `controller` `set_output` `output` `cache`
+
+```php
+	public function getDocumentPendingsEmitWithErrors() {
+        $this->output->cache(300); // 5 minutos
+        try{
+            $this->validateaccess->validateAccessSinges('', 'json', false, false, true);
+            $response = json_encode($this->logDoc->getDocumentPendingsEmitWithErrorsLog());
+            $this->output->set_output($response);
+        } catch (Exception $exc) {
+			$code = $exc->getCode() ? $exc->getCode() : 400;
+            $messageException = ($exc->getMessage()) ? $exc->getMessage() : 'Ocurrio un error en la solicitud. Intente de nuevo, en caso de persistir el error contactese con el administrador';
+            response = json_encode(array('status' => $code, 'message' => $messageException));
+            $this->output->set_output($response);
+        }
+    }
 ```
 
 

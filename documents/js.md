@@ -4,9 +4,26 @@
 
 ## FUNCIONES GENERALES
 
+### Numero aleatorio
+###### Tags: `js` `Math` `random`
+
 ```js
     Math.floor(Math.random() * 100)				// Número aleatorio 0-100
 ```
+
+
+### Redondear numeros
+###### Tags: `js` `Math` `round`
+
+```js
+    let a = Math.round(2.60);		// 3
+	let b = Math.round(2.50);		// 3
+	let c = Math.round(2.49);		// 2
+	let d = Math.round(-2.60);		// -3
+	let e = Math.round(-2.50);		// -2
+	let f = Math.round(-2.49);		// -2
+```
+
 
 ### Try catch en JS
 ###### Tags: `js` `try` `catch`
@@ -140,9 +157,9 @@ Al trabajar con fechas en javascript y pasar un string es necesario que el forma
 ###### Tags: `js` `array` `in_array`
 ```js
     var fruits = ["Banana", "Orange", "Apple", "Mango"];
-	fruits.includes('Banana') // True
-	fruits.includes('Bananas') // False
-```
+	fruits.includes('Banana') // True 
+	fruits.includes('Bananas') // False 
+```  
 
 
 ### Setear variable a formato float - quitar decimales
@@ -154,8 +171,9 @@ Al trabajar con fechas en javascript y pasar un string es necesario que el forma
     var d = parseFloat("34 45 66")      // 34
     var e = parseFloat("   60   ")      // 60
     var f = parseFloat("40 years")      // 60
-    var g = parseFloat("He was 40")     // NaN
-```	
+    var g = parseFloat("He was 40")     // NaN 
+```  
+
 
 ### Setear variable a formato entero - quita decimales
 ###### Tags: `js` `parseInt` `format` `numero`

@@ -24,6 +24,14 @@
 ```
 
 
+## Ruta absoluta del proyecto
+###### Tags: `php` `getcwd`
+
+```php
+	getcwd()	// C:\wamp64\www\proyecto1
+```
+
+
 ### general llave unica
 ###### Tags: `php` `uniqid` 
 ```php
@@ -163,6 +171,18 @@ Eliminará del arreglo null, ceros, string vacios.
   
 	// salida: Match found
 ```
+
+
+### Validar si una variable es arreglo
+###### Tags: `php` `is_array`
+
+```php
+    is_array("Hello")											// false
+	is_array(array("red", "green", "blue"))						// true
+	is_array(array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43"))	// true
+	is_array("red, green, blue")								// false
+```
+
 
 ### Cantidad de caracteres variable string
 ###### Tags: `php` `strlen` `longitud` 
@@ -851,4 +871,32 @@ Al exportar a excel sea por csv o directamente de la librería, para números gr
 	
 	-- Impar
 	if(($i % 2) != 0) { echo 'Impar'; }
+```
+
+
+## MPDF - Instalar por composer
+###### Tags: `php` `composer` `mdpf` `pdf`
+
+
+- [`VERSIONES LIBRERIA MPDF`](https://github.com/mpdf/mpdf/tree/v6.1.3)
+- [`DOCUMENTACIÓN`](https://mpdf.github.io/installation-setup/using-without-composer.html)
+
+Instalar por consola
+```bash
+	composer require mpdf/mpdf
+```
+
+## Generar un pdf a partir de base64
+###### Tags: `php` `composer` `mdpf` `pdf`
+
+```php
+	//Decode pdf content
+	$pdf_decoded = base64_decode ($link);
+	
+	//Write data back to pdf file
+	$pdf = fopen ('test.pdf','w');
+	fwrite ($pdf,$pdf_decoded);
+	
+	//close output file
+	fclose ($pdf);
 ```

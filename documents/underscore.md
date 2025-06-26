@@ -127,6 +127,24 @@ devolviendo el índice más cercano al final donde pasa la prueba de verdad del 
 ```
 
 
+## Filtrar un  objeto
+###### Tags: `underscore` `js` `filter`
+
+```js
+	var evens = _.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+	=> [2, 4, 6]
+``` 
+
+
+## Extraer keys de objeto
+###### Tags: `underscore` `keys`
+
+```js
+	_.keys({one: 1, two: 2, three: 3});
+	=> ["one", "two", "three"]
+```
+
+
 # Underscore.string
 
 - [Documentación](https://gabceb.github.io/underscore.string.site/)  

@@ -214,6 +214,20 @@ Ejemplos implementados
 	SELECT CONVERT(VARCHAR(10), getdate(), 126)             -- Formato 2021-10-29 
 ```
 
+
+## Castear numeros con decimal
+###### Tags: `SQL` `getdate` `CAST` `DECIMAL`
+
+```sql	
+	SELECT CAST (26069175.1934196 AS DECIMAL(6,2))          --- salida 26069.19
+	SELECT CAST (26069175.1934196 AS DECIMAL(10,2))         --- salida 26069175.19
+	
+	DECIMAL
+	parametro 1: Enteros de izquierda a derecha
+	parametro 2: Decimales de la misma manera
+```
+
+
 ## Incremetar o restar dias a una fecha
 ###### Tags: `SQL` `DATEADD` `SECOND` `MINUTE` `HOUR` `DAY`
 ```sql
