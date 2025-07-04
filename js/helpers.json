@@ -4440,6 +4440,97 @@ helpers = [
         ]
     },
     {
+        "title": "Python",
+        "url": "documents\/python.html#python",
+        "subnivels": [
+            {
+                "title": "Instalar",
+                "url": "documents\/python.html#instalar",
+                "subnivels": []
+            },
+            {
+                "title": "Consola",
+                "url": "documents\/python.html#consola",
+                "subnivels": []
+            },
+            {
+                "title": "Comentarios",
+                "url": "documents\/python.html#comentarios",
+                "subnivels": []
+            },
+            {
+                "title": "Operadores matematicos",
+                "url": "documents\/python.html#operadores-matematicos",
+                "subnivels": []
+            },
+            {
+                "title": "Tipos de variables",
+                "url": "documents\/python.html#tipos-de-variables",
+                "subnivels": [],
+                "tags": [
+                    "integers",
+                    "floats",
+                    "strings",
+                    "lists",
+                    "dictionaries",
+                    "tuples"
+                ]
+            },
+            {
+                "title": "Uso variables",
+                "url": "documents\/python.html#uso-variables",
+                "subnivels": [],
+                "tags": [
+                    "print",
+                    "string",
+                    "type",
+                    "list",
+                    "range"
+                ]
+            },
+            {
+                "title": "Funciones de tipos de variables",
+                "url": "documents\/python.html#funciones-de-tipos-de-variables",
+                "subnivels": [],
+                "tags": [
+                    "upper",
+                    "title",
+                    "lower",
+                    "sum",
+                    "len",
+                    "max",
+                    "count",
+                    "values",
+                    "keys",
+                    "append",
+                    "remove",
+                    "clear",
+                    "index"
+                ]
+            },
+            {
+                "title": "Convertir tipos de datos",
+                "url": "documents\/python.html#convertir-tipos-de-datos",
+                "subnivels": [],
+                "tags": [
+                    "list",
+                    "tuple",
+                    "str",
+                    "join"
+                ]
+            },
+            {
+                "title": "Indexacion de tipos de variables",
+                "url": "documents\/python.html#indexacion-de-tipos-de-variables",
+                "subnivels": [],
+                "tags": [
+                    "list",
+                    "tuple"
+                ]
+            }
+        ]
+    },
+    {
         "title": "REACT JS",
         "url": "documents\/reactJS.html#react-js",
         "subnivels": [
