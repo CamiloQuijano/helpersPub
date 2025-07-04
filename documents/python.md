@@ -17,22 +17,21 @@ Seguir los siguientes pasos dependiendo el sistema operativo
 ## Consola
 
 ```bash
-	py -3		            # Testear pyton x consola - apertura inicio consola
-	py -3 nombreArchivo     # Ejecutar un archivo ptyhon (formato py)
-	cls	                    # Limpiar consola
-	exit()                  # Comando para salir de consola
+	py -3                   # Testear pyton x consola - apertura inicio consola  
+	py -3 nombreArchivo     # Ejecutar un archivo ptyhon (formato py)  
+	cls                     # Limpiar consola  
+	exit()                  # Comando para salir de consola  
 ```
 
 Puedes ver el listado de atributos del tipo de dato usando:  
 ```bash
-	dir(int)				# Atributos de un tipo de variable - entero
-	dir(float)				# Atributos de un tipo de variable - decimal
-	dir(str)				# Atributos de un tipo de variable - texto
-	dir(list)				# Atributos de un tipo de variable - lista
-	dir(dict)				# Atributos de un tipo de variable - diccionario
-	dir(__builtins__)		# Listado de todas las funciones de tipo variable
+	dir(int)                # Atributos de un tipo de variable - entero
+	dir(float)              # Atributos de un tipo de variable - decimal
+	dir(str)                # Atributos de un tipo de variable - texto
+	dir(list)               # Atributos de un tipo de variable - lista
+	dir(dict)               # Atributos de un tipo de variable - diccionario
+	dir(__builtins__)       # Listado de todas las funciones de tipo variable
 	
-	# Acceder a documentación de una función en específico
 	help(str)
 	help(str.upper)			# Explicación de una función de un tipo de variable (String)
 	help(str.replace)		# Explicación de una función de un tipo de variable (String)
@@ -52,13 +51,13 @@ Se debe usar la almuadilla (#)
 ## Operadores matematicos
 
 ```bash
-	print(3 + 4)    # Salida 7 (Addition)
-	print(3 - 4)    # Salida -1 (Subtraction)
-	print(3 * 4)    # Salida 12 (Multiplication)
-	print(3 / 4)    # Salida 0.75 (Division)
-	print(9 // 2)   # Salida 4 (Floor Division)
-	print(9 % 2)    # Salida 1 (Modulus)
-	print(3 ** 4)   # Salida 81 (Exponentiation - (3 * 3 * 3 * 3))
+	print(3 + 4)       # Salida 7 (Addition)
+	print(3 - 4)       # Salida -1 (Subtraction)
+	print(3 * 4)       # Salida 12 (Multiplication)
+	print(3 / 4)       # Salida 0.75 (Division)
+	print(9 // 2)      # Salida 4 (Floor Division)
+	print(9 % 2)       # Salida 1 (Modulus)
+	print(3 ** 4)      # Salida 81 (Exponentiation - (3 * 3 * 3 * 3))
 ```
 
 ## Tipos de variables  
@@ -149,7 +148,7 @@ Ejemplo listas
 	notes = [5, 4, 3.1, 3]
 	print(type(notes))                    # Salida <class 'list'>
 	print(notes)                          # Salida [5, 4, 3.1, 3]
-	print(notes * 3)			          # Salida [5, 4, 3.1, 3, 5, 4, 3.1, 3, 5, 4, 3.1, 3]
+	print(notes * 3)                      # Salida [5, 4, 3.1, 3, 5, 4, 3.1, 3, 5, 4, 3.1, 3]
 	print(notes + notes)                  # Salida [5, 4, 3.1, 3, 5, 4, 3.1, 3]
 ```
 
@@ -161,11 +160,8 @@ Paremetros:
 3. step o saltos entre valores
 
 ```bash
-	notes = list{range(1,6)}
-	print(notes)                          # Salida [1,2,3,4,5]
-	
-	notes2 = list(range(1,6, 2))
-	print(notes2)                         # Salida [1,3,5]
+	notes = list{range(1,6)}               # Salida [1,2,3,4,5]
+	notes2 = list(range(1,6, 2))           # Salida [1,3,5]
 ```
 
 Ejemplo Tuplas - Son iguales a las listas, pero con parentesis ()  
@@ -187,14 +183,14 @@ Uso de funciones en tipos de variables
 	text = 'Hello'
 	text.upper()                          # Salida HELLO
 	text.title()                          # Salida Hello
-	text.lower()				          # Salida hello
-	text.replace('e', 'i')				  # Salida hillo
+	text.lower()                          # Salida hello
+	text.replace('e', 'i')                # Salida hillo
 	
 	# Indexacion textos
 	text = 'Hello'
-	text[1]								  # Salida: e
-	text[-1]							  # Salida: o
-	text[:3]							  # Salida: hel
+	text[1]                                # Salida: e
+	text[-1]                               # Salida: o
+	text[:3]                               # Salida: hel
 	
 	# Ejemplo listas
 	notes3 = [9.1, 8.8, 7.5]
@@ -208,35 +204,35 @@ Uso de funciones en tipos de variables
 	
 	# Funciones generales de lista (Agregar | Eliminar | Acceder)  
 	temperatures = [5,6,7,8]
-	temperatures.append(9)				# Salida: [5,6,7,8,9]
-	temperatures.remove(6)				# Salida: [5,7,8,9]
-	temperatures.clear()				# Salida: []
-	temperatures.index(6)				# Salida: 1
-	temperatures.__getitem__(1)			# Salida: 6
-	temperatures[0]					    # Salida: 5
-	temperatures[1]					    # Salida: 6
+	temperatures.append(9)              # Salida: [5,6,7,8,9]
+	temperatures.remove(6)              # Salida: [5,7,8,9]
+	temperatures.clear()                # Salida: []
+	temperatures.index(6)               # Salida: 1
+	temperatures.__getitem__(1)         # Salida: 6
+	temperatures[0]                     # Salida: 5
+	temperatures[1]                     # Salida: 6
 	
 	# Segmentar Lista
-	temperatures[1:3]					# Salida: [6,7]
-	temperatures[:3]					# Salida: [5,6,7]
-	temperatures[0:3]					# Salida: [5,6,7]
-	temperatures[2:]					# Salida: [7,8]
+	temperatures[1:3]                   # Salida: [6,7]
+	temperatures[:3]                    # Salida: [5,6,7]
+	temperatures[0:3]                   # Salida: [5,6,7]
+	temperatures[2:]                    # Salida: [7,8]
 	
 	# Segmentar Lista: Index Negativo (se cuenta del ultimo elemento al primero (-1, -2))
-	temperatures[-1]				    # Salida: 8
-	temperatures[-2]				    # Salida: 7
-	temperatures[-2:]					# Salida: [7,8]
-	temperatures[-3:-1]					# Salida: [6,7,8]
+	temperatures[-1]                    # Salida: 8
+	temperatures[-2]                    # Salida: 7
+	temperatures[-2:]                   # Salida: [7,8]
+	temperatures[-3:-1]                 # Salida: [6,7,8]
 ```
 
 Ejemplo de variable tipo diccionatio (dict) - Objecto
 
 ```bash
 	student_grades = { "Juan": 9.1, "Luis": 8.8, "Pedro": 7.5 }
-	student_grades.values()              		# Salida: dict_values([9.1, 8.8, 7.5])
-	student_grades.keys()                		# Salida: dict_keys(['Juan', 'Luis', 'Pedro'])
-	mysum = sum(student_grades.values);			# Salida: 25.4
-	student_grades['Juan']						# Salida: 9.1
+	student_grades.values()                     # Salida: dict_values([9.1, 8.8, 7.5])
+	student_grades.keys()                       # Salida: dict_keys(['Juan', 'Luis', 'Pedro'])
+	mysum = sum(student_grades.values);         # Salida: 25.4
+	student_grades['Juan']                      # Salida: 9.1
 ```
 
 
