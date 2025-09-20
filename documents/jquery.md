@@ -133,6 +133,15 @@
 $(".showDetailContent").toggle();
 ```
 
+
+## Acordion - activar otra seccion
+###### Tags: `jquery` `accordion` `option` `active`
+
+```js	
+    $("#accordion-home").accordion('option', 'active' , 1);
+```
+
+
 ## Select
 ###### Tags: `jquery`
 

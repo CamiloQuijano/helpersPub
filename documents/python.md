@@ -33,9 +33,9 @@ Puedes ver el listado de atributos del tipo de dato usando:
 	dir(__builtins__)       # Listado de todas las funciones de tipo variable
 	
 	help(str)
-	help(str.upper)			# Explicación de una función de un tipo de variable (String)
-	help(str.replace)		# Explicación de una función de un tipo de variable (String)
-	help(dict.values)		# Explicación de una función de un tipo de variable (dict - objecto)
+	help(str.upper)         # Explicación de una función de un tipo de variable (String)
+	help(str.replace)       # Explicación de una función de un tipo de variable (String)
+	help(dict.values)       # Explicación de una función de un tipo de variable (dict - objecto)
 ```
 
 ## Comentarios 

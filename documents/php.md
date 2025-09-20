@@ -79,11 +79,57 @@ Forma de acceder a información por row (caso ADDI)
 	$formdata = (array) json_decode(file_get_contents('php://input'), TRUE); 
 ```
 
+
+## En caso de error al extraer contenido de un archivo por file_get_contents 
+###### Tags: `php` `file_get_contents` `verify_peer` `verify_peer_name` `tls_process_server_certificate` 
+
+Error
+```html
+	<h4>A PHP Error was encountered</h4>
+	<p>Severity: Warning</p>
+	<p>Message: file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+		error:1416F086:SSL routines:tls_process_server_certificate:certificate verify failed</p>
+	<p>Filename: bussines/LogElectronicBillingDS.php</p>
+	<p>Line Number: 224</p>
+```
+
+Solución
+```php
+	$this->load->library('AwsS3');
+	$downloadFileResponse = $this->awss3->downloadFile($docHead['anexos']);
+	$file = file_get_contents(base_url($downloadFileResponse['pathfile']), false, stream_context_create([
+		"ssl"=>array( "verify_peer"=>false, "verify_peer_name"=>false ),
+	]));
+	$annexesBase64 = base64_encode($file);
+```
+
+
 ## Redireccionar
 ```php
 	header('Location: index.php');
 	die();
 ```
+
+
+## Codificar URL
+###### Tags: `php` `urlencode`
+```php
+	$url = "https://www.geeksforgeeks.org/page.php/ geeks";
+	$encodedURL = urlencode($url);
+	echo "Encoded URL: $encodedURL\n";
+	// Salida: Encoded URL: https%3A%2F%2Fwww.geeksforgeeks.org%2Fpage.php%3Fquery%3Dhello+geeks
+```
+
+
+## Decodificar URL
+###### Tags: `php` `urldecode`
+```php
+	$url = "https://www.geeksforgeeks.org/page.php/ geeks";
+	$decodedURL = urldecode($encodedURL);
+	echo "Decoded URL: $decodedURL\n";
+	// Salida: Decoded URL: https://www.geeksforgeeks.org/page.php/ geeks
+```
+
 
 ## Sesion - iniciar - asignar - eliminar 
 ```php
@@ -118,6 +164,25 @@ Para búsqueda key en array **by-dimencional**
 	];
 	$key = array_search(101, array_column($userdb, 'uid'));	// $clave = 1;
 	$key = array_search(102, array_column($userdb, 'uid'));	// $clave = 2;
+```
+
+
+### Recortar un arreglo por keys
+###### Tags: `php` `array` `array_slice` 
+```php
+	$a= ["red","green","blue","yellow","brown"];
+	print_r(array_slice($a,1,2));
+	// SALIDA: Array ( [0] => green [1] => blue )
+	
+	// Preservar el key
+	$a= ["red","green","blue","yellow","brown"];
+	print_r(array_slice($a,1,2,true));
+	//SALIDA: Array ( [1] => green [2] => blue )
+	
+	// No preservar key
+	$a=array("red","green","blue","yellow","brown");
+	print_r(array_slice($a,1,2,false));
+	// SALIDA: Array ( [0] => green [1] => blue )
 ```
 
 
@@ -201,6 +266,15 @@ Eliminará del arreglo null, ceros, string vacios.
 	substr("abcdef", 0, -1);                   // "abcde"
 	substr("abcdef", 2, -1);                   // "cde"
 	substr($_SERVER['SERVER_NAME'], 0, 20);    // IP hasta 20 caractéres
+```	
+
+
+## Validar si una variable tiene solo texto
+###### Tags: `php` `preg_match`
+```php
+	preg_match('/^[a-zA-Z0-9]+$/', 'abc123')      // true
+	preg_match('/^[a-zA-Z0-9]+$/', 'abc 123')     // false
+	preg_match('/^[a-zA-Z0-9]+$/', 'abc@123')     // false
 ```	
 
 

@@ -694,6 +694,16 @@ helpers = [
                             "html",
                             "trustAsHtml"
                         ]
+                    },
+                    {
+                        "title": "filtro contar keys de un arreglo",
+                        "url": "documents\/angular.html#filtro-contar-keys-de-un-arreglo",
+                        "subnivels": [],
+                        "tags": [
+                            "angular",
+                            "filters",
+                            "numkeys"
+                        ]
                     }
                 ]
             },
@@ -801,7 +811,9 @@ helpers = [
                 "tags": [
                     "angular",
                     "ng-repeat",
-                    "range"
+                    "range",
+                    "trackby",
+                    "dupes"
                 ]
             },
             {
@@ -2011,6 +2023,17 @@ helpers = [
                 ]
             },
             {
+                "title": "Acordion - activar otra seccion",
+                "url": "documents\/jquery.html#acordion---activar-otra-seccion",
+                "subnivels": [],
+                "tags": [
+                    "jquery",
+                    "accordion",
+                    "option",
+                    "active"
+                ]
+            },
+            {
                 "title": "Select",
                 "url": "documents\/jquery.html#select",
                 "subnivels": [
@@ -2214,6 +2237,36 @@ helpers = [
                         ]
                     },
                     {
+                        "title": "Agregar elemento en arreglo en la mitad de uno ya existente",
+                        "url": "documents\/js.html#agregar-elemento-en-arreglo-en-la-mitad-de-uno-ya-existente",
+                        "subnivels": [],
+                        "tags": [
+                            "js",
+                            "array",
+                            "splice"
+                        ]
+                    },
+                    {
+                        "title": "Eliminar multiples elementos de un array",
+                        "url": "documents\/js.html#eliminar-multiples-elementos-de-un-array",
+                        "subnivels": [],
+                        "tags": [
+                            "js",
+                            "array",
+                            "splice"
+                        ]
+                    },
+                    {
+                        "title": "Agregar y eliminar elementos en un array en una misma funcion",
+                        "url": "documents\/js.html#agregar-y-eliminar-elementos-en-un-array-en-una-misma-funcion",
+                        "subnivels": [],
+                        "tags": [
+                            "js",
+                            "array",
+                            "splice"
+                        ]
+                    },
+                    {
                         "title": "Consultar elemento en un array",
                         "url": "documents\/js.html#consultar-elemento-en-un-array",
                         "subnivels": [],
@@ -2391,12 +2444,29 @@ helpers = [
                     {
                         "title": "Datepicker - control entre fecha Inicial y final",
                         "url": "documents\/js.html#datepicker---control-entre-fecha-inicial-y-final",
-                        "subnivels": []
+                        "subnivels": [],
+                        "tags": [
+                            "html",
+                            "form",
+                            "datepicker",
+                            "setStartDate",
+                            "setEndDate"
+                        ]
                     }
                 ],
                 "tags": [
                     "datepicker",
                     "documentacion"
+                ]
+            },
+            {
+                "title": "Formulario busqueda con input fech",
+                "url": "documents\/js.html#formulario-busqueda-con-input-fech",
+                "subnivels": [],
+                "tags": [
+                    "html",
+                    "form",
+                    "datepicker"
                 ]
             },
             {
@@ -2414,6 +2484,18 @@ helpers = [
                     "change",
                     "setTimeout",
                     "resetear"
+                ]
+            },
+            {
+                "title": "Preseleccionar opcion de un autocompletar",
+                "url": "documents\/js.html#preseleccionar-opcion-de-un-autocompletar",
+                "subnivels": [],
+                "tags": [
+                    "js",
+                    "Option",
+                    "append",
+                    "trigger",
+                    "change"
                 ]
             },
             {
@@ -3158,9 +3240,39 @@ helpers = [
                 ]
             },
             {
+                "title": "En caso de error al extraer contenido de un archivo por file_get_contents",
+                "url": "documents\/php.html#en-caso-de-error-al-extraer-contenido-de-un-archivo-por-file_get_contents",
+                "subnivels": [],
+                "tags": [
+                    "php",
+                    "file_get_contents",
+                    "verify_peer",
+                    "verify_peer_name",
+                    "tls_process_server_certificate"
+                ]
+            },
+            {
                 "title": "Redireccionar",
                 "url": "documents\/php.html#redireccionar",
                 "subnivels": []
+            },
+            {
+                "title": "Codificar URL",
+                "url": "documents\/php.html#codificar-url",
+                "subnivels": [],
+                "tags": [
+                    "php",
+                    "urlencode"
+                ]
+            },
+            {
+                "title": "Decodificar URL",
+                "url": "documents\/php.html#decodificar-url",
+                "subnivels": [],
+                "tags": [
+                    "php",
+                    "urldecode"
+                ]
             },
             {
                 "title": "Sesion - iniciar - asignar - eliminar",
@@ -3175,6 +3287,16 @@ helpers = [
                             "array",
                             "array_search",
                             "array_column"
+                        ]
+                    },
+                    {
+                        "title": "Recortar un arreglo por keys",
+                        "url": "documents\/php.html#recortar-un-arreglo-por-keys",
+                        "subnivels": [],
+                        "tags": [
+                            "php",
+                            "array",
+                            "array_slice"
                         ]
                     },
                     {
@@ -3244,7 +3366,13 @@ helpers = [
                             "php",
                             "substr"
                         ]
-                    },
+                    }
+                ]
+            },
+            {
+                "title": "Validar si una variable tiene solo texto",
+                "url": "documents\/php.html#validar-si-una-variable-tiene-solo-texto",
+                "subnivels": [
                     {
                         "title": "Buscar palabra o caracter en variable de texto",
                         "url": "documents\/php.html#buscar-palabra-o-caracter-en-variable-de-texto",
@@ -3273,6 +3401,10 @@ helpers = [
                             "str_replace"
                         ]
                     }
+                ],
+                "tags": [
+                    "php",
+                    "preg_match"
                 ]
             },
             {
