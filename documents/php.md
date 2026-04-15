@@ -192,7 +192,7 @@ Eliminará del arreglo null, ceros, string vacios.
 
 
 ### Recortar palabras
-###### Tags: `php` `substr` 
+###### Tags: `php` `substr` `mb_substr`
 
 ```php
 	substr('abcdef', 1, 3);                    // bcd
@@ -201,6 +201,8 @@ Eliminará del arreglo null, ceros, string vacios.
 	substr("abcdef", 0, -1);                   // "abcde"
 	substr("abcdef", 2, -1);                   // "cde"
 	substr($_SERVER['SERVER_NAME'], 0, 20);    // IP hasta 20 caractéres
+	
+	mb_substr("abcdefáé", 2, -1);              // "cdeáé" - En caso de error con caracteres espciales UTF8
 ```	
 
 
