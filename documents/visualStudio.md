@@ -10,6 +10,7 @@
 	Ctrl + k + 0			// Minimizar archivo x funciones
 	Ctrl + k + J			// Maximizar archivo x funciones
 	Ctrl + k + S			// Ver shortcuts
+	Ctil + Windows          // Configuraciones (Fuente, tamaño, temas)
 	
 ## Comandos Consola
 
@@ -38,6 +39,7 @@
 | Javascript (ES6) Code snippets                | Autocompletar estructura JS                 	  |                                                           |
 | SASS                                    		| Autocompletar estructura sass                   |                                                           |
 | vscode-icons                                  | Iconos dependiendo la tipología del archivo     |                                                           |
+| Python                                        | Acceso directo a ejecución a consola            |                                                           |
 
 ## Cambiar shortcurs
 

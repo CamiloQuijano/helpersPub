@@ -143,6 +143,7 @@ Al trabajar con fechas en javascript y pasar un string es necesario que el forma
     fruits.push("Lemon");
 ```
 
+
 ### Eliminar elemento de un array
 ###### Tags: `js` `array` `push`
 ```js
@@ -152,6 +153,42 @@ Al trabajar con fechas en javascript y pasar un string es necesario que el forma
     // En caso de desear reconstruir los keys del arreglo para que no quede el espacio vacio
     fruits = fruits.filter(Boolean);
 ```
+
+
+### Agregar elemento en arreglo en la mitad de uno ya existente
+###### Tags: `js` `array` `splice`
+```js
+	// En posición 2, agregar "Lemon" and "Kiwi":
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits.splice(2, 0, "Lemon", "Kiwi");
+	// SALIDA; Banana,Orange,Lemon,Kiwi,Apple,Mango
+```  
+
+
+### Eliminar multiples elementos de un array
+###### Tags: `js` `array` `splice`
+```js
+	// En posición 2, eliminr 2 items
+	const fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits.splice(2, 2);
+	// SALIDA: Banana,Orange
+	
+	// En posición 2, eliminr 1 items
+	const fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits.splice(2, 1);
+	// SALIDA: Banana,Orange,Mango
+```
+
+
+### Agregar y eliminar elementos en un array en una misma funcion
+###### Tags: `js` `array` `splice`
+```js
+	// At position 2, remove 1 item, add "Lemon" and "Kiwi"
+	const fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits.splice(2, 1, "Lemon", "Kiwi");
+	// SALIDA: Banana,Orange,Lemon,Kiwi,Mango
+```
+
 
 ### Consultar elemento en un array
 ###### Tags: `js` `array` `in_array`
@@ -489,10 +526,9 @@ Es similar al while, pero se ejecuta la primera condición asi no cumpla el whil
     }).datepicker("setDate", firstDay);
 ```
 ### Datepicker - control entre fecha Inicial y final
+###### Tags: `html` `form` `datepicker` `setStartDate` `setEndDate`
 
 ```html
-
-    <!-- html -->
     <div class="col-xs-12 col-sm-3" >
         <div class="form-groups mt-2">
             <div class="input__singular--1">
@@ -517,22 +553,65 @@ Es similar al while, pero se ejecuta la primera condición asi no cumpla el whil
             </div>
         </div>
     </div>
-	
-    <!-- javascript -->
-    <script>
-        // Ajustar elemento de fecha fin para que esta no pueda ser menor a la aplicada
-        $('#searchEHDateInit').change(function(){
-            var date = $(this).val(); 
-            if (date) { $('#searchEHDateEnd').datepicker('setStartDate', date); } 
-        }); 
-
-        // Ajustar elemento de fecha inicio para que esta no pueda ser mayor a la aplicada 
-        $('#searchEHDateEnd').change(function(){
-            var date = $(this).val(); 
-            if (date) { $('#searchEHDateInit').datepicker('setEndDate', date); } 
-        }); 
-    </script>
 ```
+```js
+	// Ajustar elemento de fecha fin para que esta no pueda ser menor a la aplicada
+	$('#searchEHDateInit').change(function(){
+		var date = $(this).val(); 
+		if (date) { $('#searchEHDateEnd').datepicker('setStartDate', date); } 
+	}); 
+
+	// Ajustar elemento de fecha inicio para que esta no pueda ser mayor a la aplicada 
+	$('#searchEHDateEnd').change(function(){
+		var date = $(this).val(); 
+		if (date) { $('#searchEHDateInit').datepicker('setEndDate', date); } 
+	}); 
+```
+
+## Formulario busqueda con input fech
+###### Tags: `html` `form` `datepicker`
+```html
+    <!-- Formulario Búsqueda -->
+	<div class="row mb-2">
+		<!-- Fecha Inicio -->
+		<div class="col-xs-12 col-md-3 offset-md-2">
+			<div class="input__singular--1">
+				<label for="inputInitialDate">Fecha inicial</label>
+				<span class="input__container">
+					<input id="inputInitialDate" type="text" class="input__singular--text" name="initialDate" placeholder="Fecha inicial" readonly="">
+					<label for="inputInitialDate"><i class="fa fa-calendar" aria-hidden="true"></i></label>
+				</span>
+			</div>
+		</div>
+		<!-- Fecha final -->
+		<div class="col-xs-12 col-md-3">
+			<div class="input__singular--1">
+				<label for="inputFinalDate">Fecha final</label>
+				<span class="input__container">
+					<input id="inputFinalDate" type="text" class="input__singular--text" name="finalDate" placeholder="Fecha final" readonly="">
+					<label for="inputFinalDate"><i class="fa fa-calendar" aria-hidden="true"></i></label>
+				</span>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-2 mt-2">
+			<div class="btn4__singular w-100">
+				<button type="submit">
+					<h2><i class="fa fa-search" aria-hidden="true"></i> Consultar </h2>
+				</button>
+			</div>
+		</div>
+		<hr>
+	</div>
+```
+```js
+	$('#inputInitialDate, #inputFinalDate').datepicker({
+		autoclose: true,
+		endDate: '0',
+		format: 'dd/mm/yyyy',
+		todayHighlight: true
+	});
+```
+
 
 ## Reiniciar Form reset
 ```js
@@ -553,6 +632,14 @@ Es similar al while, pero se ejecuta la primera condición asi no cumpla el whil
 		$("#nameImnput").trigger('change'); 
 		$('#nameImnput').val('').trigger('change');
 	}, 200);
+```
+
+
+## Preseleccionar opcion de un autocompletar
+###### Tags: `js` `Option` `append` `trigger` `change`
+```javascript
+	var option = new Option('Nombre', 'code', true, true);
+	$('#cityMod').append(option).trigger('change');
 ```
 
 

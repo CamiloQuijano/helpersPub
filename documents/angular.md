@@ -1,6 +1,6 @@
-
 {% raw %}
 
+<style> body { tab-size: 4; } </style>
 [`Volver`](../index.html)
 
 # Angular JS
@@ -164,6 +164,31 @@ Implementar filtro de Rangos
 ```
 ```html
 	<p ng-bind-html="config.example | trust"></p>
+```
+
+
+### filtro contar keys de un arreglo
+###### Tags: `angular` `filters` `numkeys`
+
+```javascript
+	angular
+		.module("configurationApp",[])
+		.filter('numkeys', function() {
+			return function(object) { 
+				if(!object) { return 0; }
+				return Object.keys(object).length; 
+			};
+		})
+```
+```html
+	{{ (filters.category | numkeys) }}
+
+	<h3 ng-hide="(filters.category | numkeys) <= 1"> CATEGORÍA </h3>
+	<div ng-hide="(filters.category | numkeys) <= 1">
+		<div class="checkbox" ng-repeat="(k, v) in filters.category ">
+			<label><input type="checkbox"> {{ v }} </label>
+		</div>
+	</div>
 ```
 
 
@@ -363,6 +388,7 @@ Capturar información de Formulario HTML para envío por angular
 	};
 ```
 
+
 ## Estructura tabla HTML - angular - datatable - export excel
 ```html
 
@@ -376,7 +402,8 @@ Capturar información de Formulario HTML para envío por angular
     <div class="row mt-3" ng-if="dtDocuments.show">
         <div class="col-xs-12">
             <div class="table-responsive">
-                <table datatable="ng" dt-options="dtDocuments.options" class="table table__singular noneHover"
+                <table datatable="ng" class="table table__singular noneHover"
+					   dt-options="dtDocuments.options"
                        data-order="[[ 2, &quot;desc&quot; ]]" data-page-length='25'>
                     <thead>
                         <tr>
@@ -412,7 +439,9 @@ Capturar información de Formulario HTML para envío por angular
             </div>
         </div>
     </div>
-```	
+	
+```
+
 
 ## Select options con flitro
 
@@ -461,12 +490,20 @@ Resultado:
 
 
 ## ng-repeat
-###### Tags: `angular` `ng-repeat` `range`
+###### Tags: `angular` `ng-repeat` `range` `trackby` `dupes`
 
 ```javascript
 	ng-repeat="(k, lf) in listFiles"		// Arreglo
 	ng-repeat="n in [] | range:100"			// Rango (Tiene que estar implementado filter range)
 ```
+
+En caso de error: Error: ngRepeat:dupes - Duplicate Key in Repeater  
+```html
+	<div ng-repeat="row in dtReportAdviser.alertss track by $index">
+		{{ row }}
+	</div>
+```
+
 
 ## ng-options
 ###### Tags: `angular` `ng-options` `range`
@@ -572,4 +609,3 @@ app.js →  Principal
 [img1]: angular/range.png "Input Rango"
 
 {% endraw %}
-

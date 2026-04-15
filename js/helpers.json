@@ -175,6 +175,17 @@ helpers = [
                 ]
             },
             {
+                "title": "Castear numeros con decimal",
+                "url": "documents\/SQL.html#castear-numeros-con-decimal",
+                "subnivels": [],
+                "tags": [
+                    "SQL",
+                    "getdate",
+                    "CAST",
+                    "DECIMAL"
+                ]
+            },
+            {
                 "title": "Incremetar o restar dias a una fecha",
                 "url": "documents\/SQL.html#incremetar-o-restar-dias-a-una-fecha",
                 "subnivels": [],
@@ -683,6 +694,16 @@ helpers = [
                             "html",
                             "trustAsHtml"
                         ]
+                    },
+                    {
+                        "title": "filtro contar keys de un arreglo",
+                        "url": "documents\/angular.html#filtro-contar-keys-de-un-arreglo",
+                        "subnivels": [],
+                        "tags": [
+                            "angular",
+                            "filters",
+                            "numkeys"
+                        ]
                     }
                 ]
             },
@@ -790,7 +811,9 @@ helpers = [
                 "tags": [
                     "angular",
                     "ng-repeat",
-                    "range"
+                    "range",
+                    "trackby",
+                    "dupes"
                 ]
             },
             {
@@ -829,6 +852,16 @@ helpers = [
                     "apply",
                     "ng-cloak",
                     "$scope"
+                ]
+            },
+            {
+                "title": "Directive - renderizar al finalizar iteracion",
+                "url": "documents\/angular.html#directive---renderizar-al-finalizar-iteracion",
+                "subnivels": [],
+                "tags": [
+                    "angular",
+                    "directive",
+                    "onFinishRenderElement"
                 ]
             },
             {
@@ -1264,6 +1297,24 @@ helpers = [
                 ]
             },
             {
+                "title": "Sumarle meses a una fecha",
+                "url": "documents\/excel.html#sumarle-meses-a-una-fecha",
+                "subnivels": [],
+                "tags": [
+                    "excel",
+                    "FECHA.MES"
+                ]
+            },
+            {
+                "title": "Buscar caracter en especifico",
+                "url": "documents\/excel.html#buscar-caracter-en-especifico",
+                "subnivels": [],
+                "tags": [
+                    "excel",
+                    "ENCONTRAR"
+                ]
+            },
+            {
                 "title": "Concatenar textos",
                 "url": "documents\/excel.html#concatenar-textos",
                 "subnivels": [],
@@ -1283,6 +1334,15 @@ helpers = [
                 ]
             },
             {
+                "title": "Contar condicional",
+                "url": "documents\/excel.html#contar-condicional",
+                "subnivels": [],
+                "tags": [
+                    "excel",
+                    "CONTAR.SI"
+                ]
+            },
+            {
                 "title": "Longitud palabras",
                 "url": "documents\/excel.html#longitud-palabras",
                 "subnivels": [],
@@ -1291,6 +1351,16 @@ helpers = [
                     "largo",
                     "length",
                     "tama\u00f1o"
+                ]
+            },
+            {
+                "title": "Contar Espacios en celda",
+                "url": "documents\/excel.html#contar-espacios-en-celda",
+                "subnivels": [],
+                "tags": [
+                    "excel",
+                    "LARGO",
+                    "SUSTITUIR"
                 ]
             }
         ]
@@ -1359,6 +1429,15 @@ helpers = [
                 "title": "Logs de errores",
                 "url": "documents\/generics.html#logs-de-errores",
                 "subnivels": []
+            },
+            {
+                "title": "Error en envio de correos electronicos a traves de google",
+                "url": "documents\/generics.html#error-en-envio-de-correos-electronicos-a-traves-de-google",
+                "subnivels": [],
+                "tags": [
+                    "google",
+                    "sendmail"
+                ]
             }
         ]
     },
@@ -1944,6 +2023,17 @@ helpers = [
                 ]
             },
             {
+                "title": "Acordion - activar otra seccion",
+                "url": "documents\/jquery.html#acordion---activar-otra-seccion",
+                "subnivels": [],
+                "tags": [
+                    "jquery",
+                    "accordion",
+                    "option",
+                    "active"
+                ]
+            },
+            {
                 "title": "Select",
                 "url": "documents\/jquery.html#select",
                 "subnivels": [
@@ -1966,6 +2056,16 @@ helpers = [
                             "select",
                             "selected",
                             "val"
+                        ]
+                    },
+                    {
+                        "title": "Agrupar objetos - unir",
+                        "url": "documents\/jquery.html#agrupar-objetos---unir",
+                        "subnivels": [],
+                        "tags": [
+                            "jquery",
+                            "extend",
+                            "join"
                         ]
                     },
                     {
@@ -1994,6 +2094,26 @@ helpers = [
                 "title": "FUNCIONES GENERALES",
                 "url": "documents\/js.html#funciones-generales",
                 "subnivels": [
+                    {
+                        "title": "Numero aleatorio",
+                        "url": "documents\/js.html#numero-aleatorio",
+                        "subnivels": [],
+                        "tags": [
+                            "js",
+                            "Math",
+                            "random"
+                        ]
+                    },
+                    {
+                        "title": "Redondear numeros",
+                        "url": "documents\/js.html#redondear-numeros",
+                        "subnivels": [],
+                        "tags": [
+                            "js",
+                            "Math",
+                            "round"
+                        ]
+                    },
                     {
                         "title": "Try catch en JS",
                         "url": "documents\/js.html#try-catch-en-js",
@@ -2114,6 +2234,36 @@ helpers = [
                             "js",
                             "array",
                             "push"
+                        ]
+                    },
+                    {
+                        "title": "Agregar elemento en arreglo en la mitad de uno ya existente",
+                        "url": "documents\/js.html#agregar-elemento-en-arreglo-en-la-mitad-de-uno-ya-existente",
+                        "subnivels": [],
+                        "tags": [
+                            "js",
+                            "array",
+                            "splice"
+                        ]
+                    },
+                    {
+                        "title": "Eliminar multiples elementos de un array",
+                        "url": "documents\/js.html#eliminar-multiples-elementos-de-un-array",
+                        "subnivels": [],
+                        "tags": [
+                            "js",
+                            "array",
+                            "splice"
+                        ]
+                    },
+                    {
+                        "title": "Agregar y eliminar elementos en un array en una misma funcion",
+                        "url": "documents\/js.html#agregar-y-eliminar-elementos-en-un-array-en-una-misma-funcion",
+                        "subnivels": [],
+                        "tags": [
+                            "js",
+                            "array",
+                            "splice"
                         ]
                     },
                     {
@@ -2294,12 +2444,29 @@ helpers = [
                     {
                         "title": "Datepicker - control entre fecha Inicial y final",
                         "url": "documents\/js.html#datepicker---control-entre-fecha-inicial-y-final",
-                        "subnivels": []
+                        "subnivels": [],
+                        "tags": [
+                            "html",
+                            "form",
+                            "datepicker",
+                            "setStartDate",
+                            "setEndDate"
+                        ]
                     }
                 ],
                 "tags": [
                     "datepicker",
                     "documentacion"
+                ]
+            },
+            {
+                "title": "Formulario busqueda con input fech",
+                "url": "documents\/js.html#formulario-busqueda-con-input-fech",
+                "subnivels": [],
+                "tags": [
+                    "html",
+                    "form",
+                    "datepicker"
                 ]
             },
             {
@@ -2317,6 +2484,18 @@ helpers = [
                     "change",
                     "setTimeout",
                     "resetear"
+                ]
+            },
+            {
+                "title": "Preseleccionar opcion de un autocompletar",
+                "url": "documents\/js.html#preseleccionar-opcion-de-un-autocompletar",
+                "subnivels": [],
+                "tags": [
+                    "js",
+                    "Option",
+                    "append",
+                    "trigger",
+                    "change"
                 ]
             },
             {
@@ -2990,6 +3169,18 @@ helpers = [
             {
                 "title": "Funciones generales",
                 "url": "documents\/php.html#funciones-generales",
+                "subnivels": [],
+                "tags": [
+                    "php",
+                    "set_time_limit",
+                    "error_reporting",
+                    "date_default_timezone_set",
+                    "sleep"
+                ]
+            },
+            {
+                "title": "Ruta absoluta del proyecto",
+                "url": "documents\/php.html#ruta-absoluta-del-proyecto",
                 "subnivels": [
                     {
                         "title": "general llave unica",
@@ -3012,10 +3203,7 @@ helpers = [
                 ],
                 "tags": [
                     "php",
-                    "set_time_limit",
-                    "error_reporting",
-                    "date_default_timezone_set",
-                    "sleep"
+                    "getcwd"
                 ]
             },
             {
@@ -3052,9 +3240,39 @@ helpers = [
                 ]
             },
             {
+                "title": "En caso de error al extraer contenido de un archivo por file_get_contents",
+                "url": "documents\/php.html#en-caso-de-error-al-extraer-contenido-de-un-archivo-por-file_get_contents",
+                "subnivels": [],
+                "tags": [
+                    "php",
+                    "file_get_contents",
+                    "verify_peer",
+                    "verify_peer_name",
+                    "tls_process_server_certificate"
+                ]
+            },
+            {
                 "title": "Redireccionar",
                 "url": "documents\/php.html#redireccionar",
                 "subnivels": []
+            },
+            {
+                "title": "Codificar URL",
+                "url": "documents\/php.html#codificar-url",
+                "subnivels": [],
+                "tags": [
+                    "php",
+                    "urlencode"
+                ]
+            },
+            {
+                "title": "Decodificar URL",
+                "url": "documents\/php.html#decodificar-url",
+                "subnivels": [],
+                "tags": [
+                    "php",
+                    "urldecode"
+                ]
             },
             {
                 "title": "Sesion - iniciar - asignar - eliminar",
@@ -3069,6 +3287,16 @@ helpers = [
                             "array",
                             "array_search",
                             "array_column"
+                        ]
+                    },
+                    {
+                        "title": "Recortar un arreglo por keys",
+                        "url": "documents\/php.html#recortar-un-arreglo-por-keys",
+                        "subnivels": [],
+                        "tags": [
+                            "php",
+                            "array",
+                            "array_slice"
                         ]
                     },
                     {
@@ -3112,6 +3340,15 @@ helpers = [
                         ]
                     },
                     {
+                        "title": "Validar si una variable es arreglo",
+                        "url": "documents\/php.html#validar-si-una-variable-es-arreglo",
+                        "subnivels": [],
+                        "tags": [
+                            "php",
+                            "is_array"
+                        ]
+                    },
+                    {
                         "title": "Cantidad de caracteres variable string",
                         "url": "documents\/php.html#cantidad-de-caracteres-variable-string",
                         "subnivels": [],
@@ -3129,7 +3366,13 @@ helpers = [
                             "php",
                             "substr"
                         ]
-                    },
+                    }
+                ]
+            },
+            {
+                "title": "Validar si una variable tiene solo texto",
+                "url": "documents\/php.html#validar-si-una-variable-tiene-solo-texto",
+                "subnivels": [
                     {
                         "title": "Buscar palabra o caracter en variable de texto",
                         "url": "documents\/php.html#buscar-palabra-o-caracter-en-variable-de-texto",
@@ -3158,6 +3401,10 @@ helpers = [
                             "str_replace"
                         ]
                     }
+                ],
+                "tags": [
+                    "php",
+                    "preg_match"
                 ]
             },
             {
@@ -3496,6 +3743,28 @@ helpers = [
                 "title": "Funciones - consulta par - impar",
                 "url": "documents\/php.html#funciones---consulta-par---impar",
                 "subnivels": []
+            },
+            {
+                "title": "MPDF - Instalar por composer",
+                "url": "documents\/php.html#mpdf---instalar-por-composer",
+                "subnivels": [],
+                "tags": [
+                    "php",
+                    "composer",
+                    "mdpf",
+                    "pdf"
+                ]
+            },
+            {
+                "title": "Generar un pdf a partir de base64",
+                "url": "documents\/php.html#generar-un-pdf-a-partir-de-base64",
+                "subnivels": [],
+                "tags": [
+                    "php",
+                    "composer",
+                    "mdpf",
+                    "pdf"
+                ]
             }
         ]
     },
@@ -3616,6 +3885,16 @@ helpers = [
                         "title": "Ejemplo query sencilla order_by - join",
                         "url": "documents\/phpCodeigniter.html#ejemplo-query-sencilla-order_by---join",
                         "subnivels": []
+                    },
+                    {
+                        "title": "Ejemplo query con subconsultas",
+                        "url": "documents\/phpCodeigniter.html#ejemplo-query-con-subconsultas",
+                        "subnivels": [],
+                        "tags": [
+                            "php",
+                            "query",
+                            "join"
+                        ]
                     }
                 ]
             },
@@ -3639,6 +3918,19 @@ helpers = [
                     "controller",
                     "documentacion",
                     "json"
+                ]
+            },
+            {
+                "title": "Ejemplo Controlador con control try-catch y retorno json y cache",
+                "url": "documents\/phpCodeigniter.html#ejemplo-controlador-con-control-try-catch-y-retorno-json-y-cache",
+                "subnivels": [],
+                "tags": [
+                    "try",
+                    "catch",
+                    "controller",
+                    "set_output",
+                    "output",
+                    "cache"
                 ]
             },
             {
@@ -4280,6 +4572,97 @@ helpers = [
         ]
     },
     {
+        "title": "Python",
+        "url": "documents\/python.html#python",
+        "subnivels": [
+            {
+                "title": "Instalar",
+                "url": "documents\/python.html#instalar",
+                "subnivels": []
+            },
+            {
+                "title": "Consola",
+                "url": "documents\/python.html#consola",
+                "subnivels": []
+            },
+            {
+                "title": "Comentarios",
+                "url": "documents\/python.html#comentarios",
+                "subnivels": []
+            },
+            {
+                "title": "Operadores matematicos",
+                "url": "documents\/python.html#operadores-matematicos",
+                "subnivels": []
+            },
+            {
+                "title": "Tipos de variables",
+                "url": "documents\/python.html#tipos-de-variables",
+                "subnivels": [],
+                "tags": [
+                    "integers",
+                    "floats",
+                    "strings",
+                    "lists",
+                    "dictionaries",
+                    "tuples"
+                ]
+            },
+            {
+                "title": "Uso variables",
+                "url": "documents\/python.html#uso-variables",
+                "subnivels": [],
+                "tags": [
+                    "print",
+                    "string",
+                    "type",
+                    "list",
+                    "range"
+                ]
+            },
+            {
+                "title": "Funciones de tipos de variables",
+                "url": "documents\/python.html#funciones-de-tipos-de-variables",
+                "subnivels": [],
+                "tags": [
+                    "upper",
+                    "title",
+                    "lower",
+                    "sum",
+                    "len",
+                    "max",
+                    "count",
+                    "values",
+                    "keys",
+                    "append",
+                    "remove",
+                    "clear",
+                    "index"
+                ]
+            },
+            {
+                "title": "Convertir tipos de datos",
+                "url": "documents\/python.html#convertir-tipos-de-datos",
+                "subnivels": [],
+                "tags": [
+                    "list",
+                    "tuple",
+                    "str",
+                    "join"
+                ]
+            },
+            {
+                "title": "Indexacion de tipos de variables",
+                "url": "documents\/python.html#indexacion-de-tipos-de-variables",
+                "subnivels": [],
+                "tags": [
+                    "list",
+                    "tuple"
+                ]
+            }
+        ]
+    },
+    {
         "title": "REACT JS",
         "url": "documents\/reactJS.html#react-js",
         "subnivels": [
@@ -4684,7 +5067,8 @@ helpers = [
                 "tags": [
                     "underscore",
                     "js",
-                    "sortBy"
+                    "sortBy",
+                    "order"
                 ]
             },
             {
@@ -4765,6 +5149,25 @@ helpers = [
                     "underscore",
                     "js",
                     "findWhere"
+                ]
+            },
+            {
+                "title": "Filtrar un  objeto",
+                "url": "documents\/underscore.html#filtrar-un--objeto",
+                "subnivels": [],
+                "tags": [
+                    "underscore",
+                    "js",
+                    "filter"
+                ]
+            },
+            {
+                "title": "Extraer keys de objeto",
+                "url": "documents\/underscore.html#extraer-keys-de-objeto",
+                "subnivels": [],
+                "tags": [
+                    "underscore",
+                    "keys"
                 ]
             }
         ]
