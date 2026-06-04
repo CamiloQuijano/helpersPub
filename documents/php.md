@@ -257,7 +257,7 @@ Eliminará del arreglo null, ceros, string vacios.
 
 
 ### Recortar palabras
-###### Tags: `php` `substr` 
+###### Tags: `php` `substr` `mb_substr`
 
 ```php
 	substr('abcdef', 1, 3);                    // bcd
@@ -266,6 +266,8 @@ Eliminará del arreglo null, ceros, string vacios.
 	substr("abcdef", 0, -1);                   // "abcde"
 	substr("abcdef", 2, -1);                   // "cde"
 	substr($_SERVER['SERVER_NAME'], 0, 20);    // IP hasta 20 caractéres
+	
+	mb_substr("abcdefáé", 2, -1);              // "cdeáé" - En caso de error con caracteres espciales UTF8
 ```	
 
 
@@ -885,16 +887,114 @@ Parámetros de función fputcsv
  
 
 ## PHP Excel
-###### Tags: `php` `phpexcel` `format` `autosize`
+
+
+### Crear excel
+###### Tags: `php` `phpexcel`
 
 ```php		
-	// PHPEXCEL - Recorrer abecedario 
+	$objPHPExcel = new PHPExcel();
+	$objPHPExcel->createSheet();
+	$objWorksheet = $objPHPExcel->setActiveSheetIndex(0);
+	$objWorksheet->setCellValueByColumnAndRow(0, 1, "Producto"); // Escribir por cordenadas(fila, columna)
+	$objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
+	$objWriter->save($name);
+	return $name;
+```   
+
+
+### Crear excel desde un template
+###### Tags: `php` `phpexcel`
+
+```php		
+	$templatePath = 'resources/files/formatos/formatQuater.xlsx';
+	$this->load->library('PHPExcelNew/Classes/PHPExcel'); 
+
+	$excelReader = new PHPExcel_Reader_Excel2007();
+	$objPHPExcel = $excelReader->load($templatePath);
+	$objWorksheet = $objPHPExcel->getActiveSheet();
+
+	$nameFile = "cotizacion-".$numDoc.".xlsx";        
+	$pathFile = "resources/tmpl/{$nameFile}";
+	$objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
+	$objWriter->save($pathFile);
+```  
+
+
+### Convertir un cordenada numerica a letra
+###### Tags: `php` `phpexcel` `stringFromColumnIndex`
+
+```php		
+	// Convertir índices numéricos a letras (ej: 0 -> A, 4 -> E)
+	$letraInicio = PHPExcel_Cell::stringFromColumnIndex($colInicio);
+	$letraFin = PHPExcel_Cell::stringFromColumnIndex($colFin);
+```   
+
+### Permitir Saltos de línea
+###### Tags: `php` `phpexcel` `wrap`
+
+```php		
+	$celda = 'A1';
+	$contenido = "Primera línea\nSegunda línea\nTercera línea";
+
+	// 1. Insertar el texto
+	$objPHPExcel->getActiveSheet()->setCellValue($celda, $contenido);
+
+	// Tener en cuenta los saltos de linea (los textos deben venir en comillas dobles)
+	$objWorksheet->getStyle('D1:D10')->getAlignment()->setWrapText(true);
+```   
+
+
+### Cambiar estilos de celdas
+###### Tags: `php` `phpexcel` `format` `autosize` `height` `width` `bold` `borders` `alignment`
+
+```php		
+	// Recorrer abecedario 
 	foreach(range('A',$lastCol) as $columnID) {
 		$PhpExcel->getActiveSheet()->getColumnDimension($columnID)->setAutoSize(true);
 	}
 
-	// PHPEXCEL - Formato con DOS Decimales 
+	// Formato con DOS Decimales 
 	$Sheet->getStyle($lastCol.'2:'.$lastCol.($row-1))->getNumberFormat()->setFormatCode('0.00'); 
+	
+	// Precio: asignar formato numero (Por rango de celdas)
+	$objWorksheet
+		->getStyle('E2:E'.($row-1))
+		->getNumberFormat()
+		->setFormatCode('$ #,##0.00');
+
+	// Actualizar el alto de la fila
+	$objWorksheet->getRowDimension($row)->setRowHeight(60);
+
+	// Actualizar el ancho
+	$objWorksheet->getColumnDimension('B')->setWidth(100);
+
+	// Aplicar negrita a una celda individual
+	$sheet->getStyle('A1')->getFont()->setBold(true);
+
+	// Aplicar negrita a un rango de celdas
+	$sheet->getStyle('A1:C1')->getFont()->setBold(true);
+	
+	// Cuadricula
+	$objWorksheet->getStyle('A1:C10')->applyFromArray([
+		'borders' => [
+			'allborders' => [
+				'style' => PHPExcel_Style_Border::BORDER_THIN,
+				'color' => array('rgb' => '000000'),
+			],
+		],
+	]);
+	
+	// Alinear texto al centro
+	$estiloCentrado = array(
+		'alignment' => array(
+			'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
+			'vertical'   => PHPExcel_Style_Alignment::VERTICAL_CENTER,
+		)
+	);
+	$objPHPExcel->getActiveSheet()->getStyle('A1:D10')->applyFromArray($estiloCentrado);
+	
+	
 ```
 
 ### Crear Imagen en excel
@@ -916,6 +1016,17 @@ Crear imagen en excel
 	$objDrawing->setOffsetY(10); //pixels
 	$objDrawing->setCoordinates('B19');
 	$objDrawing->setWorksheet($objPHPExcel->getActiveSheet());
+	
+	// Generación de Imagen (con validación de extensión)
+	$dataPathBundle = explode('.', $imagen);
+	$extensionBundle = end($dataPathBundle);
+	if($extensionBundle == 'png') {
+		$gdImageBundle = imagecreatefrompng($imagen);
+		imageAlphaBlending($gdImageBundle, true);
+		imageSaveAlpha($gdImageBundle, true);
+	} else {
+		$gdImageBundle = imagecreatefromjpeg($imagen);
+	}
 ```
 
 ### Insertar Fila
@@ -1059,3 +1170,12 @@ CSS
 	curl_close($curlSecondHandler);
 ```
 
+
+## Asignar valor por defecto a variable no definida
+###### Tags: `php` `undefined`
+
+```php
+	// Si $usuario no existe o es null, $nombre será 'Invitado'
+	$nombre = $usuario ?? 'Invitado';
+	explode(',', $sss['ss'] ?? '')
+```

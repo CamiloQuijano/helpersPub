@@ -24,6 +24,7 @@
 	=TEXTO(FECHA;"yyyy-mm-dd")      	// Formato fecha    	Salida: 2022-08-12
 	=TEXTO(FECHA;"yy-mm-dd")        	// Formato fecha    	Salida: 22-08-12
 	=TEXTO(FECHA;"dd/mm/yyyy HH:MM")	// Formato fecha    	Salida: 22/08/12 05:10
+	=TEXTO(FECHA;"dddd")                // Día de la semana     Salida: "lunes", "martes", etc.
 	=HOY()                          	// Fecha actual     	Salida: 2/01/2022
 ```
 
@@ -35,6 +36,20 @@
 	FECHA = '15/05/2025';
 	=FECHA.MES(FECHA;3)				    // 15/08/2025
 	=FECHA.MES(FECHA;12)			    // 15/05/2026
+```
+
+
+## Dia de la semana - numero
+###### Tags: `excel` `DIASEM`
+
+Reglas del segundo parametro de la función, con el día que inicia la semana  
+	1 → Domingo=1, Sábado=7 (predeterminado)  
+	2 → Lunes=1, Domingo=7  
+	3 → Lunes=0, Domingo=6  
+
+```js
+    FECHA = '15/05/2025';
+	=DIASEM(FECHA; 2)                   // Devuelve 1=>Lunes | 2=>Martes | etc
 ```
 
 
@@ -96,6 +111,16 @@
 	A1 = 'Juan David'                // Salida: 1
 	A1 = 'Juan David Perez'          // Salida: 2
 ```
+
+
+## Valor positivo de una celda
+###### Tags: `excel` `ABS`
+
+```js
+	=ABS(-2380)     // salida: 2380
+	=ABS(2380)      // salida: 2380
+```
+
 
 ## Macros
 
