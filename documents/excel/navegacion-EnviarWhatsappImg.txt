@@ -1,0 +1,50 @@
+Sub EnviarWhatsappImgNavTxt()
+Dim Teléfono As String
+Dim Texto As String
+
+For Each Celda In Hoja1.Range("Clientes[TELÉFONO]")
+
+    With Envío
+        Teléfono = Celda.Value
+        Texto = Celda.Offset(0, 1).Value
+        ActiveSheet.Shapes(2).Copy
+        
+        AppActivate "WhatsApp"
+        
+        'Se ubica en el cuadro de busqueda y luego Control n para crear nuevo chat
+        Application.Wait (Now + TimeValue("00:00:02"))
+        SendKeys "^f", True
+        Application.Wait (Now + TimeValue("00:00:02"))
+        SendKeys "^n", True
+        
+        'Escribe el número de teléfono
+        Application.Wait (Now + TimeValue("00:00:01"))
+        SendKeys Teléfono, True
+        
+        'Se desplaza hacia abajo y da enter en "Chatear"
+        Application.Wait (Now + TimeValue("00:00:01"))
+        SendKeys "{Tab}", True
+        Application.Wait (Now + TimeValue("00:00:01"))
+        SendKeys "{Tab}", True
+        Application.Wait (Now + TimeValue("00:00:01"))
+        SendKeys "~", True
+        Application.Wait (Now + TimeValue("00:00:01"))
+        SendKeys "~", True
+        
+        'Escribe el mensaje y lo envía con Enter.  Tambien envía las imagenes
+        Application.Wait (Now + TimeValue("00:00:02"))
+        SendKeys "^v", True
+        Application.Wait (Now + TimeValue("00:00:03"))
+        SendKeys Texto, True
+        Application.Wait (Now + TimeValue("00:00:02"))
+        SendKeys "~", True
+        SendKeys "^f", True
+        
+        'Pone un mensaje de enviado en la tabla
+        Celda.Offset(0, 2).Value = "ENVIADO"
+        
+    End With
+Next Celda
+
+
+End Sub

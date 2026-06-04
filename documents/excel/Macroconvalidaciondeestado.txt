@@ -1,0 +1,88 @@
+Sub EnviarWhatsAppConChrome()
+Dim Teléfono As String
+Dim Imagen As String
+Dim Texto As String
+
+For Each Celda In Envío.Range("Clientes[TELÉFONO]")
+    
+    Status = Celda.Offset(0, 4).Value
+    
+    If Status = "VENCIDO" Then
+        
+        With Envío
+            Teléfono = Celda.Value
+            Texto = Celda.Offset(0, 6).Value
+            Imagen = Celda.Offset(0, 7).Value
+            .Pictures.Insert(Imagen).Name = "ImagenW"
+            .Shapes("ImagenW").Copy
+            
+            AppActivate "WhatsApp"
+            
+            'Se ubica en el cuadro de busqueda y luego Control n para crear nuevo chat
+            Application.Wait (Now + TimeValue("00:00:02"))
+            SendKeys "^f", True
+            Application.Wait (Now + TimeValue("00:00:02"))
+            SendKeys "^n", True
+            
+            'Se desplaza dos veces hacia abajo y preciona enter en "Número de teléfono"
+            Application.Wait (Now + TimeValue("00:00:02"))
+            SendKeys "{Tab}", True
+            Application.Wait (Now + TimeValue("00:00:01"))
+            SendKeys "{Tab}", True
+            Application.Wait (Now + TimeValue("00:00:01"))
+            SendKeys "~", True
+            
+            'Borra el indicativo en el caso que se quiera enviar a varios paises
+            Application.Wait (Now + TimeValue("00:00:01"))
+            SendKeys "{BACKSPACE}", True
+            Application.Wait (Now + TimeValue("00:00:01"))
+            SendKeys "{BACKSPACE}", True
+            Application.Wait (Now + TimeValue("00:00:01"))
+            SendKeys "{BACKSPACE}", True
+            
+            'Escribe el número de teléfono
+            Application.Wait (Now + TimeValue("00:00:01"))
+            SendKeys Teléfono, True
+            
+            'Se desplaza hacia abajo y da enter en "Chatear"
+            Application.Wait (Now + TimeValue("00:00:01"))
+            SendKeys "{Tab}", True
+            Application.Wait (Now + TimeValue("00:00:01"))
+            SendKeys "~", True
+            
+            'Se ubica nuevamente en el cuadro de busqueda y luego se desplaza hacia atras hasta ubicarse en "Escribir mensaje"
+            Application.Wait (Now + TimeValue("00:00:02"))
+            SendKeys "^f", True
+            Application.Wait (Now + TimeValue("00:00:01"))
+            SendKeys "+{Tab}", True
+            Application.Wait (Now + TimeValue("00:00:01"))
+            SendKeys "+{Tab}", True
+            Application.Wait (Now + TimeValue("00:00:01"))
+            SendKeys "+{Tab}", True
+            Application.Wait (Now + TimeValue("00:00:02"))
+            SendKeys "+{Tab}", True
+            
+            'Escribe el mensaje y lo envía con Enter.  Tambien envía las imagenes
+            Application.Wait (Now + TimeValue("00:00:01"))
+            SendKeys Texto, True
+            Application.Wait (Now + TimeValue("00:00:01"))
+            SendKeys "~", True
+            Application.Wait (Now + TimeValue("00:00:02"))
+            SendKeys "^v", True
+            Application.Wait (Now + TimeValue("00:00:02"))
+            SendKeys "~", True
+            .Shapes("ImagenW").Delete
+            
+            'Pone un mensaje de enviado en la tabla
+            Celda.Offset(0, 8).Value = "ENVIADO"
+            
+        End With
+        
+    End If
+    
+Next Celda
+
+'Activa nuevamente el teclado numérico
+SendKeys "{NUMLOCK}", True
+
+End Sub

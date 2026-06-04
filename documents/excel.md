@@ -96,3 +96,28 @@
 	A1 = 'Juan David'                // Salida: 1
 	A1 = 'Juan David Perez'          // Salida: 2
 ```
+
+## Macros
+
+### Macro con validacion de estado
+
+- [`SCRIPT`](excel/Macroconvalidaciondeestado.txt)  
+
+
+### Envio de mensajes whatsapp masivo
+###### Tags: `excel` `whatsapp`
+
+Ejemplo envio mensaje (Directo)
+- [`SCRIPT`](excel/direct-EnviarWhatsappMsm.txt) | [`EXCEL`](excel/WhatsappTexto-Directo.xlsm)
+
+Ejemplo envio imagen (Directo)
+- [`SCRIPT`](excel/direct-EnviarWhatsImage.txt) | [`EXCEL`](excel/WhatsappImagen-Directo.xlsm)
+
+Ejemplo envio mensaje (Navegacion)
+- [`SCRIPT`](excel/navegacion-EnviarWhatsapp.txt) | [`EXCEL`](excel/WhatsappTexto-Navagacion.xlsm)
+
+Ejemplo envio mensaje (Navegacion)
+- [`SCRIPT`](excel/navegacion-EnviarWhatsappImg.txt) | [`EXCEL`](excel/WhatsappImagen-Navegacion.xlsm)
+
+Pruebas  
+- [`EXCEL`](excel/Pruebas.xlsm)

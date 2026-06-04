@@ -38,6 +38,9 @@ Puedes ver el listado de atributos del tipo de dato usando:
 	help(dict.values)       # Explicación de una función de un tipo de variable (dict - objecto)
 ```
 
+
+
+
 ## Comentarios 
 
 Se debe usar la almuadilla (#)
@@ -327,4 +330,140 @@ A dictionary value can be accessed using its corresponding dictionary key:
 	phone_numbers = {"John":"+37682929928","Marry":"+423998200919"}
 	phone_numbers["Marry"]
 	Output: '+423998200919'
+```
+
+
+
+## Validar tipo de dato de una variable
+###### Tags: `isinstance`
+
+```bash
+	students_grades_obj = {"Marry": 9.1, "Sim": 8.8, "Jhon": 7.5};
+	print(isinstance(students_grades_obj,dict)) # Salida: True
+	print(isinstance(students_grades_obj,list)) # Salida: Flse
+
+	students_grades_obj = {"Marry": 9.1, "Sim": 8.8, "Jhon": 7.5};
+	print(isinstance(3,int)) # Salida: True
+
+	# isinstance equivale a esta validación
+	print(type(3) == int) # Salida: True
+```
+
+
+## Definir Funciones
+###### Tags: `def` `isinstance` `sum` `len`
+
+```bash
+
+	# ---------------------------------------------------
+	# Ejemplo 1
+	def convert(amount):
+    	output = amount * 1.75
+    	return output
+ 
+	print(convert(10)) # Salida: 17.5
+	print(convert(1)) # Salida: 1.75
+
+	# ---------------------------------------------------
+	# Ejemplo 2
+	def cuadrado(num):
+		return num * num
+		
+	print(cuadrado(3))  # Salida: 9
+	print(cuadrado(4))  # Salida: 16
+	print(cuadrado(7))  # Salida: 49
+
+	# ---------------------------------------------------
+	# Ejemplo 3: Validar si un texto tiene más de cierta cantidad de caracteres
+	def validatePassword(textp):
+		if (len(textp) >= 8):
+			textr = True
+		else:
+			textr = False
+			
+		return textr
+
+	validatePassword("mypss")           # Salida: False
+	validatePassword("mylongpassword")  # Salida: True
+
+
+	# ---------------------------------------------------
+	# Ejemplo 4: Promedio de un arreglo (Con funcion - valida si el parametro es arreglo o objeto)
+	def mean(mylist):
+		if isinstance(mylist,dict): # type(mylist) == dict
+			print("function DICT")
+			varmean = sum(mylist.values()) / len(mylist)
+		else:
+			print("function LIST")
+			varmean = sum(mylist) / len(mylist)
+
+		return varmean
+
+	# Prueba envindo arreglo para calcular promedio
+	students_grades = [9.3, 8.8, 7.5];
+	print(mean(students_grades))
+	# Salida: 8.5333
+
+	# Prueba envindo object para calcular promedio
+	students_grades_obj = {"Marry": 9.1, "Sim": 8.8, "Jhon": 7.5};
+	print(mean(students_grades_obj))
+	# Salida: 8.4666
+
+```
+
+
+## Operadores Condicionales
+###### Tags: `if` `elif` `else` `and` `or` `in_array`
+
+```bash
+	# ---------------------------------------------------
+	# Ejemplo 1 - If:
+	# SALIDA: YES
+	x = 1
+	if x == 1:
+		print("Yes")
+	else:
+		print("No")
+
+	# ---------------------------------------------------
+	# Ejemplo 2 - If OR:
+	# SALIDA: YES
+	x = 1
+	y = 1
+	if x == 1 or y==2:
+		print("Yes")
+	else:
+		print("No")
+
+	# ---------------------------------------------------
+	# Ejemplo 3 - IF ELIF ELSE AND:
+
+	def temperature(numb):
+    if numb > 25:
+        return "Hot"
+    elif numb >= 15 and numb <= 25:
+        return "Warm"
+    else:
+        return "Cold"
+
+	print(temperature(10)) # Salida: Cold
+	print(temperature(15)) # Salida: Warm 
+	print(temperature(16)) # Salida: Warm 
+	print(temperature(25)) # Salida: Warm 
+	print(temperature(26)) # Salida: Hot
+
+
+	# ---------------------------------------------------
+	# Ejemplo 3 - IF con in array
+
+	def foo(x, array):
+		if x in array:
+			return True
+		else:
+			return False
+	
+	print(foo(1, [1, 2, 3])) # True
+	print(foo(1, [2, 3])) # False
+	print(foo(1, ['1', 2, 3])) # False
+
 ```

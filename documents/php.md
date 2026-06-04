@@ -960,7 +960,7 @@ Instalar por consola
 	composer require mpdf/mpdf
 ```
 
-## Generar un pdf a partir de base64
+### Generar un pdf a partir de base64
 ###### Tags: `php` `composer` `mdpf` `pdf`
 
 ```php
@@ -974,3 +974,88 @@ Instalar por consola
 	//close output file
 	fclose ($pdf);
 ```
+
+
+### Estilizar pdf
+###### Tags: `php` `header` `footer` `background`
+
+CSS
+```css
+    @page {        
+        header: html_headerPage;
+        footer: html_footerPage;
+		margin-top: 180px; 
+		margin-left: 90px; 
+		margin-right: 90px; 
+		background-image: url('images/background.jpg');
+    }
+```
+```html
+<div>
+    <!-- Encabezado de la página -->
+    <htmlpageheader name="headerPage">
+        <img id="certification-header-img" src="images/header.png') ?>" width="250">
+    </htmlpageheader>
+
+    <!-- Footer de la página -->
+    <htmlpagefooter name="footerPage">
+        <img id="certification-footer-img" src="images/footer.png') ?>">
+    </htmlpagefooter>    
+</div>
+```
+
+### Background full alto ncho
+###### Tags: `php` `background`
+
+```css
+	.backImg {
+		background-image: url('images/background.jpg');
+		background-size: 100% 100%;
+		height:100%;
+	}
+```
+```html
+	<div class="backImg"></div>
+```
+
+
+## CURL
+
+### Autenticacion basica
+###### Tags: `php` `curl` `CURLOPT_HTTPAUTH` `CURLOPT_USERPWD`
+
+```php
+	$curlHandler = curl_init();
+	$userName = 'postman';
+	$password = 'password';
+
+	curl_setopt_array($curlHandler, [
+		CURLOPT_URL => 'https://postman-echo.com/basic-auth',
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_HTTPAUTH => CURLAUTH_BASIC,
+		CURLOPT_USERPWD => $userName . ':' . $password,
+	]);
+
+	$response = curl_exec($curlHandler);
+	curl_close($curlHandler);
+```
+
+
+### Autenticacion en header
+###### Tags: `php` `curl` `CURLOPT_HTTPHEADER` `Authorization` `base64_encode`
+
+```php
+	$curlSecondHandler = curl_init();
+
+	curl_setopt_array($curlSecondHandler, [
+		CURLOPT_URL => 'https://postman-echo.com/basic-auth',
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_HTTPHEADER => [
+			'Authorization: Basic ' . base64_encode($userName . ':' . $password)
+		],
+	]);
+
+	$response = curl_exec($curlSecondHandler);
+	curl_close($curlSecondHandler);
+```
+
