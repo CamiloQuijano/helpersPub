@@ -1362,6 +1362,26 @@ helpers = [
                     "LARGO",
                     "SUSTITUIR"
                 ]
+            },
+            {
+                "title": "Macros",
+                "url": "documents\/excel.html#macros",
+                "subnivels": [
+                    {
+                        "title": "Macro con validacion de estado",
+                        "url": "documents\/excel.html#macro-con-validacion-de-estado",
+                        "subnivels": []
+                    },
+                    {
+                        "title": "Envio de mensajes whatsapp masivo",
+                        "url": "documents\/excel.html#envio-de-mensajes-whatsapp-masivo",
+                        "subnivels": [],
+                        "tags": [
+                            "excel",
+                            "whatsapp"
+                        ]
+                    }
+                ]
             }
         ]
     },
@@ -3747,7 +3767,39 @@ helpers = [
             {
                 "title": "MPDF - Instalar por composer",
                 "url": "documents\/php.html#mpdf---instalar-por-composer",
-                "subnivels": [],
+                "subnivels": [
+                    {
+                        "title": "Generar un pdf a partir de base64",
+                        "url": "documents\/php.html#generar-un-pdf-a-partir-de-base64",
+                        "subnivels": [],
+                        "tags": [
+                            "php",
+                            "composer",
+                            "mdpf",
+                            "pdf"
+                        ]
+                    },
+                    {
+                        "title": "Estilizar pdf",
+                        "url": "documents\/php.html#estilizar-pdf",
+                        "subnivels": [],
+                        "tags": [
+                            "php",
+                            "header",
+                            "footer",
+                            "background"
+                        ]
+                    },
+                    {
+                        "title": "Background full alto ncho",
+                        "url": "documents\/php.html#background-full-alto-ncho",
+                        "subnivels": [],
+                        "tags": [
+                            "php",
+                            "background"
+                        ]
+                    }
+                ],
                 "tags": [
                     "php",
                     "composer",
@@ -3756,14 +3808,32 @@ helpers = [
                 ]
             },
             {
-                "title": "Generar un pdf a partir de base64",
-                "url": "documents\/php.html#generar-un-pdf-a-partir-de-base64",
-                "subnivels": [],
-                "tags": [
-                    "php",
-                    "composer",
-                    "mdpf",
-                    "pdf"
+                "title": "CURL",
+                "url": "documents\/php.html#curl",
+                "subnivels": [
+                    {
+                        "title": "Autenticacion basica",
+                        "url": "documents\/php.html#autenticacion-basica",
+                        "subnivels": [],
+                        "tags": [
+                            "php",
+                            "curl",
+                            "CURLOPT_HTTPAUTH",
+                            "CURLOPT_USERPWD"
+                        ]
+                    },
+                    {
+                        "title": "Autenticacion en header",
+                        "url": "documents\/php.html#autenticacion-en-header",
+                        "subnivels": [],
+                        "tags": [
+                            "php",
+                            "curl",
+                            "CURLOPT_HTTPHEADER",
+                            "Authorization",
+                            "base64_encode"
+                        ]
+                    }
                 ]
             }
         ]
@@ -4659,6 +4729,38 @@ helpers = [
                     "list",
                     "tuple"
                 ]
+            },
+            {
+                "title": "Validar tipo de dato de una variable",
+                "url": "documents\/python.html#validar-tipo-de-dato-de-una-variable",
+                "subnivels": [],
+                "tags": [
+                    "isinstance"
+                ]
+            },
+            {
+                "title": "Definir Funciones",
+                "url": "documents\/python.html#definir-funciones",
+                "subnivels": [],
+                "tags": [
+                    "def",
+                    "isinstance",
+                    "sum",
+                    "len"
+                ]
+            },
+            {
+                "title": "Operadores Condicionales",
+                "url": "documents\/python.html#operadores-condicionales",
+                "subnivels": [],
+                "tags": [
+                    "if",
+                    "elif",
+                    "else",
+                    "and",
+                    "or",
+                    "in_array"
+                ]
             }
         ]
     },
@@ -5182,6 +5284,11 @@ helpers = [
         "url": "documents\/virtualHost.html#virtual-host",
         "subnivels": [
             {
+                "title": "Virtual Host - Acceder a localhost por IP en red",
+                "url": "documents\/virtualHost.html#virtual-host---acceder-a-localhost-por-ip-en-red",
+                "subnivels": []
+            },
+            {
                 "title": "VirtualHost SSL",
                 "url": "documents\/virtualHost.html#virtualhost-ssl",
                 "subnivels": []
@@ -5190,6 +5297,15 @@ helpers = [
                 "title": "VirtualHost Error 403",
                 "url": "documents\/virtualHost.html#virtualhost-error-403",
                 "subnivels": []
+            },
+            {
+                "title": "Instalar certificado de seguridad",
+                "url": "documents\/virtualHost.html#instalar-certificado-de-seguridad",
+                "subnivels": [],
+                "tags": [
+                    "wamp",
+                    "ssl"
+                ]
             },
             {
                 "title": "VirtualHost Default",
